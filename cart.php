@@ -4,7 +4,7 @@
 
 <?php
     include('./Template/_cart-template.php');
-    include('./Template/_new-phones.php');
+    include('./Template/_new-products.php');
 ?>
 
 <?php

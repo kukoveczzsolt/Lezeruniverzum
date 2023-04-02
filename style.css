@@ -6,6 +6,12 @@ button, button:focus {
   box-shadow: none !important;
 }
 
+.carousel img {
+
+  margin: auto;
+
+}
+
 /* typography classes */
 .font-baloo {
   font-family: "Baloo Thambi 2", cursive;
@@ -45,11 +51,11 @@ button, button:focus {
 }
 
 .color-second {
-  color: #00A5C4;
+  color: #ad880e;
 }
 
 .color-second-bg {
-  background: #00A5C4;
+  background: #ad880e;
 }
 
 .color-yellow {

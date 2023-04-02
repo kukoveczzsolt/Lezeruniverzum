@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lézer Univerzum</title>
 
-    <!-- Bootstrap CDN -->
+    <!-- Bootstrap 4 CDN 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
     <!-- Owl-carousel CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    
 
     <!-- font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
@@ -22,39 +27,28 @@
 
     <!-- start #header -->
         <header id="header">
-            <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-                <p class="font-rale font-size-12 text-black-50 m-0">Lézer Univerzum - 2351. Alsónémedi, Haraszti út 142. Tel.: +36203392299 E-mail: lezeruniverzum@gmail.com</p>
-                <div class="font-rale font-size-14">
-                    <a href="#" class="px-3 border-right border-left text-dark">Belépés</a>
-                    <a href="#" class="px-3 border-right text-dark">Kívánságlista (0)</a>
-                </div>
-            </div>
-
-            <!-- Primary Navigation -->
+        <!-- Primary Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-                <a class="navbar-brand" href="#">Lézer Univerzum</a>
+                <a class="navbar-brand" href="index.php">Lézer Univerzum</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav m-auto font-rubik">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.php">Kezdőlap</a>
+                    </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">Akciós</a>
+                      <a class="nav-link" href="about_us.php">Rólunk</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Kategóriák</a>
+                      <a class="nav-link" href="products.php">Termékeink</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./products.php">Termékek <i class="fas fa-chevron-down"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Egyedi megrendelés</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Kategóriák <i class="fas fa-chevron-down"></i></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Hamarosan</a>
+                        <a class="nav-link" href="special_price.php">Akciós termékek</a>
                       </li>
                   </ul>
                   <form action="#" class="font-size-14 font-rale">

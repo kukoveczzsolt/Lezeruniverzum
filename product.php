@@ -3,7 +3,7 @@
 ?>
 
 <?php
-    include('./Template/_products.php');
+    include('./Template/_product.php');
     include('./Template/_top-sale.php');
 ?>
 
