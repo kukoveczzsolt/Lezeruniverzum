@@ -1,44 +1,43 @@
 <?php
-function bejelentkezes()
-{
-    if(isset($_POST["kuldes"]))
-    {
-        include ('adatbazisKapcsolat.php');
 
-        if (!$conn) 
-        {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        else
-        {
-            $jelszo = $_POST["jelszo"];
-            $email = $_POST["email"];
-            $parancs = "SELECT * from felhasznalok WHERE Email = '$email'";
-            if($tabla = mysqli_query($conn,$parancs))
-            {
-              if(mysqli_num_rows($tabla)>0)
-              {
-                $row = mysqli_fetch_array($tabla);
-                $jelszo_hash = $row['Jelszo'];
-                if(password_verify($jelszo,$jelszo_hash))
-                {
-                  echo "Sikeres bejelentkezés";
-                }
-                else
-                {
-                  echo "Hibás Email/Jelszó";
-                }
-              }
-              else
-              {
-                echo "Hibás Email-cím";
-              }
-                
-            }
-                
-        } 
-        mysqli_close($conn);
+$result = "";
+if(isset($_POST["kuldes"]))
+{
+    include ('adatbazisKapcsolat.php');
+
+    if (!$conn) 
+    {
+        die("Connection failed: " . mysqli_connect_error());
     }
+    else
+    {
+        $jelszo = $_POST["jelszo"];
+        $email = $_POST["email"];
+        $parancs = "SELECT * from felhasznalok WHERE Email = '$email'";
+        if($tabla = mysqli_query($conn,$parancs))
+        {
+          if(mysqli_num_rows($tabla)>0)
+          {
+            $row = mysqli_fetch_array($tabla);
+            $jelszo_hash = $row['Jelszo'];
+            if(password_verify($jelszo,$jelszo_hash))
+            {
+              echo "Sikeres bejelentkezés";
+            }
+            else
+            {
+              $result = "Hibás Email/Jelszó";
+            }
+          }
+          else
+          {
+            $result = "Hibás Email-cím";
+          }
+            
+        }
+            
+    } 
+    mysqli_close($conn);
 }
 ?>
 
@@ -68,7 +67,7 @@ function bejelentkezes()
 
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Elfelejtett jelszó?</a></p>
 
-              <p><?php bejelentkezes();?></p>
+              <p><?php $result?></p>
               <button class="btn btn-outline-light btn-lg px-5" name="kuldes" type="submit">Belépés</button>
             </form>
 
