@@ -70,7 +70,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\1.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -104,7 +104,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\2.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -138,7 +138,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\3.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -172,7 +172,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\4.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -206,7 +206,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\5.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -240,7 +240,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\6.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -274,7 +274,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\7.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -308,7 +308,7 @@
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Akció</div>
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+          <img class="card-img-top" src="assets\products\8.jpg" alt="..." />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">

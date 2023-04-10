@@ -11,7 +11,7 @@
                                     <div class="col-lg-5">
                                         <div class="me-lg-5">
                                             <div class="d-flex">
-                                                <img src="" class="border rounded me-3" style="width: 96px; height: 96px;" />
+                                                <img src="assets\products\1.jpg" class="border rounded me-3" style="width: 96px; height: 96px;" />
                                                 <div class="">
                                                     <a href="#" class="nav-link">Dísz 1</a>
                                                     <p class="text-muted">Valami</p>
@@ -41,7 +41,7 @@
                                     <div class="col-lg-5">
                                         <div class="me-lg-5">
                                             <div class="d-flex">
-                                                <img src="" class="border rounded me-3" style="width: 96px; height: 96px;" />
+                                                <img src="assets\products\2.jpg" class="border rounded me-3" style="width: 96px; height: 96px;" />
                                                 <div class="">
                                                     <a href="#" class="nav-link">Dísz 2</a>
                                                     <p class="text-muted">Valami</p>
