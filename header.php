@@ -1,68 +1,61 @@
-<!DOCTYPE html>
-<html lang="hu">
+<!doctype html>
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lézer Univerzum</title>
+  <meta charset="utf-8">
 
-    <!-- Bootstrap 4 CDN 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    -->
+  <title>Lézer Univerzum</title>
 
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- Bootstrap 5 CSS styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- Custom CSS styles -->
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Owl-carousel CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
-    
-
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-
-    <!-- Custom CSS file -->
-    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- start #header -->
-        <header id="header">
-        <!-- Primary Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-                <a class="navbar-brand" href="index.php">Lézer Univerzum</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav m-auto font-rubik">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="index.php">Kezdőlap</a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href="about_us.php">Rólunk</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="products.php">Termékeink</a>
-                    </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Egyedi megrendelés</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="special_price.php">Akciós termékek</a>
-                      </li>
-                  </ul>
-                  <form action="#" class="font-size-14 font-rale">
-                      <a href="#" class="py-2 rounded-pill color-primary-bg">
-                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
-                      </a>
-                  </form>
-                </div>
-              </nav>
-               <!-- !Primary Navigation -->
 
-        </header>
-    <!-- !start #header -->
-    
-        <!-- start #main-site -->
-        <main id="main-site">
+
+  <!-- Header -->
+  <header class="p-3 bg-light">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="index.php" class="nav-link px-2 text-black">Kezdőlap</a></li>
+          <li><a href="products.php" class="nav-link px-2 text-black">Termékeink</a></li>
+          <li><a href="custom.php" class="nav-link px-2 text-black">Egyedi megrendelés</a></li>
+          <li><a href="contact.php" class="nav-link px-2 text-black">Kapcsolat</a></li>
+          <li><a href="about-us.php" class="nav-link px-2 text-black">Rólunk</a></li>
+        </ul>
+
+        <div class="text-end">
+
+          <button onclick="window.location.href='login.php';" type="button" class="btn btn-outline-dark text-black">Belépés</button>
+          <button onclick="window.location.href='registration.php';" type="button" class="btn btn-outline-dark text-black">Regisztráció</button>
+          <button onclick="window.location.href='cart.php';" type="button" class="btn text-black"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Header-->
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">Lézer Univerzum</h1>
+        <p class="lead fw-normal text-white-50 mb-0">Valami frappáns szlogen.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>

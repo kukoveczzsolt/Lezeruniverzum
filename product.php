@@ -1,12 +1,12 @@
 <?php
-    include('header.php');
+include('header.php');
 ?>
 
 <?php
-    include('./Template/_product.php');
-    include('./Template/_top-sale.php');
+include('./Template/_product.php');
+include('./Template/_related.php');
 ?>
 
 <?php
-    include('footer.php');
+include('footer.php');
 ?>
