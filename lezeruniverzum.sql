@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 05:16 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 10, 2023 at 08:51 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,13 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `felhasznalok` (
   `ID` int(11) NOT NULL,
-  `Jelszo` varchar(20) NOT NULL,
+  `Jelszo` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Knev` varchar(255) NOT NULL,
   `Vnev` varchar(255) NOT NULL,
   `Varos` varchar(255) NOT NULL,
   `Iranyitoszam` int(4) NOT NULL,
-  `Lakcim` varchar(255) DEFAULT NULL
+  `Lakcim` varchar(255) NOT NULL,
+  `admin_e` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -103,7 +104,8 @@ CREATE TABLE `termekek` (
 -- Indexes for table `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- Indexes for table `kategoriak`
@@ -167,13 +169,13 @@ ALTER TABLE `kosar`
 -- Constraints for table `rendelesek`
 --
 ALTER TABLE `rendelesek`
-  ADD CONSTRAINT `rendelesek_ibfk_1` FOREIGN KEY (`felhaszId`) REFERENCES `felhasznalok` (`ID`);
+  ADD CONSTRAINT `rendelesek_ibfk_1` FOREIGN KEY (`felhaszID`) REFERENCES `felhasznalok` (`ID`);
 
 --
 -- Constraints for table `termekek`
 --
 ALTER TABLE `termekek`
-  ADD CONSTRAINT `termekek_ibfk_1` FOREIGN KEY (`kategoriaId`) REFERENCES `kategoriak` (`ID`);
+  ADD CONSTRAINT `termekek_ibfk_1` FOREIGN KEY (`kategoriaID`) REFERENCES `kategoriak` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
