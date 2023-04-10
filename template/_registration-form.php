@@ -12,11 +12,11 @@
           </div>
           <div class="mb-3">
             <label for="forname" class="form-label">Vezetéknév</label>
-            <input type="text" class="form-control" id="forname"">
+            <input type="text" class="form-control" id="forname">
           </div>
           <div class=" mb-3">
             <label for="lastname" class="form-label">Keresztnév</label>
-            <input type="text" class="form-control" id="lastname"">
+            <input type="text" class="form-control" id="lastname">
           </div>
           <div class=" mb-3">
             <label for="password1" class="form-label">Jelszó</label>
