@@ -4,10 +4,12 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Lézer Univerzum</title>
 
   <!-- Bootstrap 5 CSS styles -->
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <!-- Custom CSS styles -->
   <link rel="stylesheet" href="styles.css">
@@ -35,7 +37,7 @@
           <li><a href="contact.php" class="nav-link px-2 text-black">Kapcsolat</a></li>
           <li><a href="about-us.php" class="nav-link px-2 text-black">Rólunk</a></li>
         </ul>
-
+        
         <div class="text-end">
 
           <button onclick="window.location.href='login.php';" type="button" class="btn btn-outline-dark text-black">Belépés</button>
