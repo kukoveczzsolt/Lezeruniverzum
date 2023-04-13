@@ -39,22 +39,7 @@ include "register.php";
           <input type="password" class="form-control" placeholder="Kötelező" name="jelszo2" id="password2">
           <p class="pt-2 text-danger" ><?php if(array_key_exists("jelszo2",$errors)) echo $errors["jelszo2"]; ?></p>
         </div>
-        <div class="mb-3">
-          <label for="varos" class="form-label">Város</label>
-          <input type="text" class="form-control" placeholder="Kötelező" name="varos" id="varos">
-          <p class="pt-2 text-danger"><?php if(array_key_exists("varos",$errors)) echo $errors["varos"]; ?></p>
-        </div>
-        <div class="mb-3">
-          <label for="irszam" class="form-label">Irányítószám</label>
-          <input type="text" class="form-control" placeholder="Kötelező" name="irszam" id="irszam">
-          <p class="pt-2 text-danger" ><?php if(array_key_exists("irszam",$errors)) echo $errors["irszam"]; ?></p>
-        </div>
-        <div class="mb-3">
-          <label for="forname" class="form-label">Lakcím</label>
-          <input type="text" class="form-control" placeholder="Kötelező" name="lakcim" id="lakcim">
-          <p class="pt-2 text-danger" ><?php if(array_key_exists("lakcim",$errors)) echo $errors["lakcim"]; ?></p>
-        </div>
-
+        <p><?php echo $siker ?></p>
         <button type="submit" name="kuldes" class="btn btn-primary">Regisztráció</button>
       </form>
     </div>

@@ -1,22 +1,16 @@
 <?php
 include "adatbazisKapcsolat.php";
-$errors = array("email" =>"","jelszo"=>"","jelszo2" => "","vnev" => "","knev" => "","varos" => "","irszam" => "","lakcim" => "",);
-session_start();
+$errors = array("email" =>"","jelszo"=>"","jelszo2" => "","vnev" => "","knev" => "");
+$siker = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  $email = "";
-  $jelszo = "";
-  $jelszo2 = "";
-  $jelszo_hash = "";
-  $vnev = "";
-  $knev = "";
-  $varos = "";
-  $irszam = "";
-  $lakcim = "";
-  
-  $parancs = "INSERT INTO felhasznalok (`Jelszo`, `Email`, `Knev`, `Vnev`, `Varos`, `Iranyitoszam`, `Lakcim`) 
-  VALUES ('$jelszo_hash','$email','$knev','$vnev','$varos','$irszam','$lakcim')";
+$email;
+$jelszo;
+$jelszo_hash;
+$vnev;
+$knev;
 
+#region Üres input mezők ellenőrzése
   if(!empty($_POST["email"]))
   {
     $email = $_POST["email"];
@@ -40,8 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if(!empty($_POST["jelszo2"]))
   {
-    $jelszo2 = $_POST["jelszo2"];
-    if($jelszo2 != $jelszo)
+    if($_POST["jelszo2"] != $jelszo)
     {
       $errors["jelszo2"] = "Nem egyező jelszó";
     }
@@ -74,35 +67,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   {
     $errors["knev"] = "Keresztnév megadása kötelező";
   }
+#endregion
 
-  if(!empty($_POST["varos"]))
+if(count($errors) == 0)
+{
+  try
   {
-    $varos = $_POST["varos"];
-    unset($errors["varos"]);
+    $parancs = "INSERT INTO felhasznalok (`Jelszo`, `Email`, `Knev`, `Vnev`) VALUES ('$jelszo_hash','$email','$knev','$vnev')";
+    mysqli_query($conn,$parancs);
+    $siker = "Sikeres regisztráció";
   }
-  else
+  catch(mysqli_sql_exception)
   {
-    $errors["varos"] = "Város megadása kötelező";
+    $siker = "Ez az email már foglalt";
   }
-
-  if(!empty($_POST["irszam"]))
-  {
-    $email = $_POST["irszam"];
-    unset($errors["irszam"]);
-  }
-  else
-  {
-    $errors["irszam"] = "Irányítószám megadása kötelező";
-  }
-
-  if(!empty($_POST["lakcim"]))
-  {
-    $lakcim = $_POST["lakcim"];
-    unset($errors["lakcim"]);
-  }
-  else
-  {
-    $errors["lakcim"] = "Lakcím megadása kötelező";
-  }
+}
 }
 ?>
