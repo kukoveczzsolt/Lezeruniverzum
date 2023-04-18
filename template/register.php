@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "adatbazisKapcsolat.php";
 $errors = array("email" =>"","jelszo"=>"","jelszo2" => "","vnev" => "","knev" => "");
 $siker = "";
