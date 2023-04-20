@@ -6,7 +6,7 @@ if (isset($_POST["login"]))
 {
     $email = $_SESSION["email"] = $_POST["email"];
     $jelszo = $_POST["jelszo"];
-    $parancs = "SELECT * FROM felhasznalok WHERE Email='$email'";
+    $parancs = "SELECT * FROM felhasznalok WHERE email='$email'";
     $query = mysqli_query($conn,$parancs);
     $num = mysqli_num_rows($query); 
 
@@ -32,7 +32,7 @@ if (isset($_POST["login"]))
         if($num > 0)
         {
             $result = mysqli_fetch_array($query);
-            if(password_verify($jelszo,$result["Jelszo"]))
+            if(password_verify($jelszo,$result["jelszo"]))
             {
                 unset($errors["jelszo"]);
             }

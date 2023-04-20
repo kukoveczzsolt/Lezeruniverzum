@@ -74,7 +74,7 @@ if(count($errors) == 0)
 {
   try
   {
-    $parancs = "INSERT INTO felhasznalok (`Jelszo`, `Email`, `Knev`, `Vnev`) VALUES ('$jelszo_hash','$email','$knev','$vnev')";
+    $parancs = "INSERT INTO felhasznalok (`jelszo`, `email`, `knev`, `vnev`) VALUES ('$jelszo_hash','$email','$knev','$vnev')";
     mysqli_query($conn,$parancs);
     $siker = "Sikeres regisztráció";
   }
