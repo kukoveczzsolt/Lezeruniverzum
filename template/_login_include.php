@@ -9,7 +9,7 @@ if (isset($_POST["login"]))
     $parancs = "SELECT * FROM felhasznalok WHERE Email='$email'";
     $query = mysqli_query($conn,$parancs);
     $num = mysqli_num_rows($query); 
-    
+
     #region Üres mezők ellenőrzése/Létező email
     if(!empty($email))
     {
@@ -47,6 +47,7 @@ if (isset($_POST["login"]))
     {
         $errors["jelszo"] = "Üres mező";
     }
+     #endregion
 
     if(count($errors) == 0)
     {
@@ -54,16 +55,8 @@ if (isset($_POST["login"]))
         $result = mysqli_fetch_array($query);
         $_SESSION["admin_e"] = $result["admin_e"];
         echo '<script>alert("Sikeres bejelentkezés")</script>';
-        if($result["admin_e"] == 1)
-        {
-            header("Location: logged_in_admin.php");
-        }
-        else
-        {
-            header("Location: logged_in.php");
-        }
+        header("Location: index.php");
     }
-    #endregion
 }
 
 
