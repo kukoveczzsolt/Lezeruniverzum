@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2023 at 08:51 PM
+-- Generation Time: Apr 20, 2023 at 02:45 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,15 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `felhasznalok` (
   `ID` int(11) NOT NULL,
-  `Jelszo` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Knev` varchar(255) NOT NULL,
-  `Vnev` varchar(255) NOT NULL,
-  `Varos` varchar(255) NOT NULL,
-  `Iranyitoszam` int(4) NOT NULL,
-  `Lakcim` varchar(255) NOT NULL,
-  `admin_e` tinyint(1) NOT NULL DEFAULT 0
+  `jelszo` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `knev` varchar(255) NOT NULL,
+  `vnev` varchar(255) NOT NULL,
+  `admin_e` tinyint(1) NOT NULL DEFAULT 0,
+  `reg_ideje` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`ID`, `jelszo`, `email`, `knev`, `vnev`, `admin_e`, `reg_ideje`) VALUES
+(1, '$2y$10$TTojQQpK0XxEhBEgmQ7gWOdHGtrCbkhi6WJTgRcSn31tIUxEoWywK', 'kukovecz.zsolt@gmail.com', 'Zsolt', 'Kukovecz', 1, '2023-04-15 19:15:06');
 
 -- --------------------------------------------------------
 
@@ -46,9 +51,16 @@ CREATE TABLE `felhasznalok` (
 --
 
 CREATE TABLE `kategoriak` (
-  `KategoriaNev` varchar(255) NOT NULL,
+  `kategoriaNev` varchar(255) NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `kategoriak`
+--
+
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Karácsony', 1);
 
 -- --------------------------------------------------------
 
@@ -59,9 +71,9 @@ CREATE TABLE `kategoriak` (
 CREATE TABLE `kosar` (
   `felhaszID` int(255) NOT NULL,
   `termekID` int(255) NOT NULL,
-  `Ar` double NOT NULL,
-  `Mennyiseg` int(1) NOT NULL DEFAULT 1,
-  `Osszesen` double NOT NULL
+  `ar` double NOT NULL,
+  `mennyiseg` int(1) NOT NULL DEFAULT 1,
+  `osszesen` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -73,13 +85,35 @@ CREATE TABLE `kosar` (
 CREATE TABLE `rendelesek` (
   `ID` int(11) NOT NULL,
   `felhaszID` int(11) NOT NULL,
-  `rendlesIdopont` date NOT NULL,
-  `Osszeg` double NOT NULL,
-  `felhaszVnev` varchar(255) NOT NULL,
-  `felhaszKnev` varchar(255) NOT NULL,
-  `felhaszNev` varchar(255) NOT NULL,
-  `felhaszEmail` varchar(255) DEFAULT NULL
+  `rendlesIdopont` date NOT NULL DEFAULT current_timestamp(),
+  `osszeg` double DEFAULT NULL,
+  `lakcim` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `rendelesek`
+--
+
+INSERT INTO `rendelesek` (`ID`, `felhaszID`, `rendlesIdopont`, `osszeg`, `lakcim`) VALUES
+(2, 1, '2023-04-19', NULL, '1188 Buda 15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rendeles_reszlet`
+--
+
+CREATE TABLE `rendeles_reszlet` (
+  `rendelesID` int(11) NOT NULL,
+  `termekID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `rendeles_reszlet`
+--
+
+INSERT INTO `rendeles_reszlet` (`rendelesID`, `termekID`) VALUES
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -89,12 +123,18 @@ CREATE TABLE `rendelesek` (
 
 CREATE TABLE `termekek` (
   `ID` int(11) NOT NULL,
-  `Nev` varchar(255) NOT NULL,
-  `Ar` double NOT NULL,
-  `Kategoria` varchar(255) NOT NULL,
-  `kategoriaID` int(11) NOT NULL,
-  `Mennyiseg` int(11) NOT NULL
+  `nev` varchar(255) NOT NULL,
+  `ar` double NOT NULL,
+  `kategoria` varchar(255) NOT NULL,
+  `kategoriaID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `termekek`
+--
+
+INSERT INTO `termekek` (`ID`, `nev`, `ar`, `kategoria`, `kategoriaID`) VALUES
+(1, 'Fa kerítés', 19990, 'Karácsony', 1);
 
 --
 -- Indexes for dumped tables
@@ -105,7 +145,7 @@ CREATE TABLE `termekek` (
 --
 ALTER TABLE `felhasznalok`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Email` (`Email`);
+  ADD UNIQUE KEY `Email` (`email`);
 
 --
 -- Indexes for table `kategoriak`
@@ -117,21 +157,28 @@ ALTER TABLE `kategoriak`
 -- Indexes for table `kosar`
 --
 ALTER TABLE `kosar`
-  ADD KEY `felhaszID` (`felhaszID`);
+  ADD KEY `ID` (`felhaszID`) USING BTREE;
 
 --
 -- Indexes for table `rendelesek`
 --
 ALTER TABLE `rendelesek`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `felhaszId` (`felhaszID`);
+  ADD KEY `ID` (`felhaszID`) USING BTREE;
+
+--
+-- Indexes for table `rendeles_reszlet`
+--
+ALTER TABLE `rendeles_reszlet`
+  ADD KEY `rendelesID` (`rendelesID`),
+  ADD KEY `termekID` (`termekID`);
 
 --
 -- Indexes for table `termekek`
 --
 ALTER TABLE `termekek`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `kategoriaId` (`kategoriaID`);
+  ADD KEY `ID` (`kategoriaID`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -141,19 +188,25 @@ ALTER TABLE `termekek`
 -- AUTO_INCREMENT for table `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategoriak`
 --
 ALTER TABLE `kategoriak`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rendelesek`
 --
 ALTER TABLE `rendelesek`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `termekek`
+--
+ALTER TABLE `termekek`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -170,6 +223,13 @@ ALTER TABLE `kosar`
 --
 ALTER TABLE `rendelesek`
   ADD CONSTRAINT `rendelesek_ibfk_1` FOREIGN KEY (`felhaszID`) REFERENCES `felhasznalok` (`ID`);
+
+--
+-- Constraints for table `rendeles_reszlet`
+--
+ALTER TABLE `rendeles_reszlet`
+  ADD CONSTRAINT `rendeles_reszlet_ibfk_1` FOREIGN KEY (`rendelesID`) REFERENCES `rendelesek` (`ID`),
+  ADD CONSTRAINT `rendeles_reszlet_ibfk_2` FOREIGN KEY (`termekID`) REFERENCES `termekek` (`ID`);
 
 --
 -- Constraints for table `termekek`
