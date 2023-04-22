@@ -3,7 +3,6 @@ include('header.php');
 ?>
 <?php
 include('.\template\_featured.php');
-include('.\template\_special-price.php');
 ?>
 <?php
 include('footer.php');
