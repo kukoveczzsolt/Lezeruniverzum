@@ -1,9 +1,7 @@
 <?php
-
 require_once('./adatbazisKapcsolat.php');
 require_once('_product_component.php');
 require_once('_category_component.php');
-
 ?>
 
 <div class="text-center my-5">
@@ -16,7 +14,8 @@ require_once('_category_component.php');
     </button>
 
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-      <form action="post">
+     <!-- <form action="<?php echo $_SERTVER['PHP_SELF']; ?>" method="post"> -->
+      <form method="post">
         <ul class="navbar-nav">
           <?php
           if (!$result = $conn->query("SELECT * FROM kategoriak")) {

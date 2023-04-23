@@ -1,147 +1,28 @@
-       <!-- Related items section-->
-       <div class="text-center my-5">
-           <h2>Javasolt termékek</h2>
-       </div>
+<?php
+require_once('./adatbazisKapcsolat.php');
+require_once('_product_component.php');
+require_once('_category_component.php');
+?>
 
-       <section class="py-5">
-           <div class="container px-4 px-lg-5 mt-5">
-               <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<div class="text-center my-5">
+    <h2>Javasolt termékeink</h2>
+</div>
 
-                   <div class="col mb-5">
-                       <div class="card h-100">
-                           <!-- Sale badge-->
-                           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                               Akció</div>
-                           <!-- Product image-->
-                           <img class="card-img-top" src="assets\products\1.jpg" alt="..." />
-                           <!-- Product details-->
-                           <div class="card-body p-4">
-                               <div class="text-center">
-                                   <!-- Product name-->
-                                   <h5 class="fw-bolder">Terméknév</h5>
-                                   <!-- Product reviews-->
-                                   <div class="d-flex justify-content-center small text-warning mb-2">
-                                       <div class="bi-star-fill">a</div>
-                                       <div class="bi-star-fill">b</div>
-                                       <div class="bi-star-fill">c</div>
-                                       <div class="bi-star-fill">d</div>
-                                       <div class="bi-star-fill">e</div>
-                                   </div>
-                                   <!-- Product price-->
-                                   <span class="text-muted text-decoration-line-through">5000 Huf</span>
-                                   4500 Huf
-                               </div>
-                           </div>
-                           <!-- Product actions-->
-                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kosárba</a>
-                               </div>
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kívánságlistára</a></div>
-                           </div>
-                       </div>
-                   </div>
+<!-- Section-->
+<section class="py-5 ">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
 
-                   <div class="col mb-5">
-                       <div class="card h-100">
-                           <!-- Sale badge-->
-                           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                               Akció</div>
-                           <!-- Product image-->
-                           <img class="card-img-top" src="assets\products\2.jpg" alt="..." />
-                           <!-- Product details-->
-                           <div class="card-body p-4">
-                               <div class="text-center">
-                                   <!-- Product name-->
-                                   <h5 class="fw-bolder">Terméknév</h5>
-                                   <!-- Product reviews-->
-                                   <div class="d-flex justify-content-center small text-warning mb-2">
-                                       <div class="bi-star-fill">a</div>
-                                       <div class="bi-star-fill">b</div>
-                                       <div class="bi-star-fill">c</div>
-                                       <div class="bi-star-fill">d</div>
-                                       <div class="bi-star-fill">e</div>
-                                   </div>
-                                   <!-- Product price-->
-                                   <span class="text-muted text-decoration-line-through">5000 Huf</span>
-                                   4500 Huf
-                               </div>
-                           </div>
-                           <!-- Product actions-->
-                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kosárba</a>
-                               </div>
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kívánságlistára</a></div>
-                           </div>
-                       </div>
-                   </div>
+      <?php
+      if (!$result = $conn->query("SELECT * FROM termekek WHERE kiemelt LIKE 1 LIMIT 4")) {
+        die();
+      }
 
-                   <div class="col mb-5">
-                       <div class="card h-100">
-                           <!-- Sale badge-->
-                           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                               Akció</div>
-                           <!-- Product image-->
-                           <img class="card-img-top" src="assets\products\3.jpg" alt="..." />
-                           <!-- Product details-->
-                           <div class="card-body p-4">
-                               <div class="text-center">
-                                   <!-- Product name-->
-                                   <h5 class="fw-bolder">Terméknév</h5>
-                                   <!-- Product reviews-->
-                                   <div class="d-flex justify-content-center small text-warning mb-2">
-                                       <div class="bi-star-fill">a</div>
-                                       <div class="bi-star-fill">b</div>
-                                       <div class="bi-star-fill">c</div>
-                                       <div class="bi-star-fill">d</div>
-                                       <div class="bi-star-fill">e</div>
-                                   </div>
-                                   <!-- Product price-->
-                                   <span class="text-muted text-decoration-line-through">5000 Huf</span>
-                                   4500 Huf
-                               </div>
-                           </div>
-                           <!-- Product actions-->
-                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kosárba</a>
-                               </div>
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kívánságlistára</a></div>
-                           </div>
-                       </div>
-                   </div>
+      while ($row = mysqli_fetch_assoc($result)) {
+        product($row['nev'],  $row['ar'],  $row['kep'],  $row['ID'],);
+      }
+      ?>
 
-                   <div class="col mb-5">
-                       <div class="card h-100">
-                           <!-- Sale badge-->
-                           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                               Akció</div>
-                           <!-- Product image-->
-                           <img class="card-img-top" src="assets\products\4.jpg" alt="..." />
-                           <!-- Product details-->
-                           <div class="card-body p-4">
-                               <div class="text-center">
-                                   <!-- Product name-->
-                                   <h5 class="fw-bolder">Terméknév</h5>
-                                   <!-- Product reviews-->
-                                   <div class="d-flex justify-content-center small text-warning mb-2">
-                                       <div class="bi-star-fill">a</div>
-                                       <div class="bi-star-fill">b</div>
-                                       <div class="bi-star-fill">c</div>
-                                       <div class="bi-star-fill">d</div>
-                                       <div class="bi-star-fill">e</div>
-                                   </div>
-                                   <!-- Product price-->
-                                   <span class="text-muted text-decoration-line-through">5000 Huf</span>
-                                   4500 Huf
-                               </div>
-                           </div>
-                           <!-- Product actions-->
-                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kosárba</a>
-                               </div>
-                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Kívánságlistára</a></div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </section>
+    </div>
+  </div>
+</section>
