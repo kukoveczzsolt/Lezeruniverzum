@@ -118,9 +118,6 @@ CREATE TABLE `rendeles_reszlet` (
 -- Dumping data for table `rendeles_reszlet`
 --
 
-INSERT INTO `rendeles_reszlet` (`rendelesID`, `termekID`) VALUES
-(2, 1);
-
 -- --------------------------------------------------------
 
 --
