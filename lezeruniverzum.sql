@@ -54,14 +54,21 @@ CREATE TABLE `kategoriak` (
   `kategoriaNev` varchar(255) NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
 --
 -- Dumping data for table `kategoriak`
 --
-
 INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
-('Karácsony', 1);
-
+('Összes termék', 1);
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Család', 2);
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Esküvő', 3);
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Pároknak', 4);
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Karácsony', 5);
+INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
+('Kiegészítők', 6);
 -- --------------------------------------------------------
 
 --
@@ -70,10 +77,7 @@ INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
 
 CREATE TABLE `kosar` (
   `felhaszID` int(255) NOT NULL,
-  `termekID` int(255) NOT NULL,
-  `ar` double NOT NULL,
-  `mennyiseg` int(1) NOT NULL DEFAULT 1,
-  `osszesen` double NOT NULL
+  `termekID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -87,15 +91,17 @@ CREATE TABLE `rendelesek` (
   `felhaszID` int(11) NOT NULL,
   `rendlesIdopont` date NOT NULL DEFAULT current_timestamp(),
   `osszeg` double DEFAULT NULL,
-  `lakcim` varchar(255) NOT NULL
+  `szamlaVaros` varchar(255) NOT NULL,
+  `szamlaIranyitoszam` int(4) NOT NULL,
+  `szamlaLakcim` varchar(255) DEFAULT NULL,
+  `szallitVaros` varchar(255) NOT NULL,
+  `szallitIranyitoszam` int(4) NOT NULL,
+  `szallitLakcim` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `rendelesek`
 --
-
-INSERT INTO `rendelesek` (`ID`, `felhaszID`, `rendlesIdopont`, `osszeg`, `lakcim`) VALUES
-(2, 1, '2023-04-19', NULL, '1188 Buda 15');
 
 -- --------------------------------------------------------
 
@@ -124,18 +130,50 @@ INSERT INTO `rendeles_reszlet` (`rendelesID`, `termekID`) VALUES
 CREATE TABLE `termekek` (
   `ID` int(11) NOT NULL,
   `nev` varchar(255) NOT NULL,
+  `leiras` varchar(255) NOT NULL,
   `ar` double NOT NULL,
-  `kategoria` varchar(255) NOT NULL,
+  `kep` varchar(255) NOT NULL,
+  `kiemelt` tinyint(1) NOT NULL,
   `kategoriaID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `termekek`
 --
-
-INSERT INTO `termekek` (`ID`, `nev`, `ar`, `kategoria`, `kategoriaID`) VALUES
-(1, 'Fa kerítés', 19990, 'Karácsony', 1);
-
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
+(1,'Otthon tábla','',4500,'assets/products/20211229_150515.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
+(2,'Otthon tábla','',4500,'assets/products/20211229_150535.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
+(3,'Szív alakú képkeret','',4000,'assets/products/20211229_150556.jpg',1,4);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
+(4,'Fa rózsa','',4000,'assets/products/20211229_150614.jpg',1,4);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(5,'Tolltartó','',5000,'assets/products/20211229_150626.jpg',0,6);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(6,'Tolltartó','',5000,'assets/products/20211229_150703.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(7,'Alátét','',750,'assets/products/20211229_151402.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(8,'Kulcstartó','',2000,'assets/products/20211229_151521.jpg',0,4);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(9,'Kulcstartó','',2000,'assets/products/20211229_151547.jpg',0,4);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(10,'Kulcstartó','',2000,'assets/products/20211229_151600.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(11,'Kulcstartó','',2000,'assets/products/20211229_151613.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(12,'Fa formájú képkeret','',20000,'assets/products/20211229_152905.jpg',1,3);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(13,'Teatartó','',10000,'assets/products/20211229_153038.jpg',0,2);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(14,'Üdvözlőlap','',10000,'assets/products/20211229_153113.jpg',0,5);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(15,'Üdvözlőlap','',10000,'assets/products/20211229_153116.jpg',0,5);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(16,'Adventi kalendárium','',5000,'assets/products/20211229_153316.jpg',0,5);
+INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
+(17,'Lámpás','',5000,'assets/products/20211229_153351.jpg',0,2);
 --
 -- Indexes for dumped tables
 --
@@ -188,25 +226,25 @@ ALTER TABLE `termekek`
 -- AUTO_INCREMENT for table `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kategoriak`
 --
 ALTER TABLE `kategoriak`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `rendelesek`
 --
 ALTER TABLE `rendelesek`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `termekek`
 --
 ALTER TABLE `termekek`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
