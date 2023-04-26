@@ -5,7 +5,7 @@ include "admin_panel_sql.php";
 
 <div class="container w-50">
   <div class="input-group mb-3 mt-3">
-      <input type="text" class="form-control" placeholder="Termék neve" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
+      <input type="text" class="form-control" placeholder="Keresés" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Termék keresés</button>
       <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="#termek_kereses">Termék keresés</a></li>
