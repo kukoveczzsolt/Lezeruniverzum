@@ -5,8 +5,9 @@ function kereses()
   filter = input.value.toUpperCase();
   table = document.getElementById("tabla");
   tr = table.getElementsByTagName("tr");
-  
-  if(window.location.href.includes("#termek_kereses"))
+  gomb = document.getElementById("gomb");
+
+  if(window.location.href.includes("#nev_kereses"))
   {
     for (i = 0; i < tr.length; i++) 
     {

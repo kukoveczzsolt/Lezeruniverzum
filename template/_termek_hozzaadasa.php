@@ -1,29 +1,9 @@
 <?php
-include "adatbazisKapcsolat.php";
-function kategoria_listazas($dbconn)
-{
-    $select_parnacs = "SELECT kategoriaNev FROM kategoriak";
-    $result = mysqli_query($dbconn,$select_parnacs);
-    while($row = mysqli_fetch_array($result))
-    {
-        echo "<option value='".$row["kategoriaNev"]."'>".$row["kategoriaNev"]."</option>";
-    }
-}
-
-if(isset($_POST["letrehozas"]))
-{
-    $termek_nev = $_POST["termek_nev"];
-    $termek_ar = $_POST["termek_ar"];
-    $kategoria_selected = $_POST["kategoria_selected"];
-    $parancs = "INSERT INTO `termekek`(`nev`, `ar`, `kategoria`, `kategoriaID`) VALUES ('$termek_nev','$termek_ar',(SELECT kategoriak.kategoriaNev from kategoriak where kategoriak.kategoriaNev = '$kategoria_selected'),(SELECT kategoriak.ID from kategoriak where kategoriak.kategoriaNev = '$kategoria_selected'))";
-    mysqli_query($conn,$parancs);
-}
-
+include_once "includes/termek_hozzaadasa_include.php";
 ?>
-<!-- Button trigger modal -->
 
 <div class="container bg-light w-25">
-<form method="post">
+<form method="post" action="includes/termek_hozzaadasa_include.php" enctype="multipart/form-data">
     <input type="text" class="form-control mt-3" name="termek_nev" placeholder="Termék neve">
     <select class="form-select mt-3" aria-label="Default select example" name="kategoria_selected">
         <optgroup label="Kategóriák">
@@ -31,11 +11,20 @@ if(isset($_POST["letrehozas"]))
         </optgroup>
     </select>
     <input type="text" class="form-control mt-3" name="termek_ar" placeholder="Ár">
+    
+    <div class="input-group pt-3">
+        <textarea class="form-control" aria-label="With textarea" placeholder="Leírás" name="leiras"></textarea>
+    </div>
+
+    <div class="input-group pt-3">
+        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".png,.gif,.jpg" name="kep" maxlength="255">
+    </div>
+
     <button type="submit" class="btn btn-success" name="letrehozas">Létrehozás</button>
+
     <!-- Új termék modal -->
-    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#uj_kategoria">
-        Új kategória
-    </button>
+
+    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#uj_kategoria">Új kategória</button>
 
     <!-- Modal -->
     <div class="modal fade" id="uj_kategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -45,9 +34,9 @@ if(isset($_POST["letrehozas"]))
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Új kategória</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
+                <form action="includes/termek_hozzaadasa_include.php" method="post">
                 <div class="modal-body">
-                    <input type="text" class="form-control" placeholder="Kategória név">
+                    <input type="text" class="form-control" placeholder="Kategória név" name="kategoria_nev">
                 </div>
 
                 <div class="modal-footer">
@@ -56,8 +45,8 @@ if(isset($_POST["letrehozas"]))
                     </form>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
-    </form>
 </div>
