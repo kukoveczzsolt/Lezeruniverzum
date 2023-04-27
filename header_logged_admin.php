@@ -43,7 +43,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
                         <li><a class="dropdown-item" href="#">Rendelések</a></li>
-                        <li><a class="dropdown-item" href="admin_panel.php">Admin</a></li>
+                        <li><a class="dropdown-item" href="admin_panel.php#nev_kereses">Admin</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item bg-danger text-white" href="logout.php"> Kijelentkezés </a></li>
                     </ul>

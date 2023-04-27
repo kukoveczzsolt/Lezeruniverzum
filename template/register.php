@@ -8,7 +8,7 @@ function filter($str)
 }
 
 session_start();
-include "adatbazisKapcsolat.php";
+include "includes/adatbazisKapcsolat.php";
 $errors = array("email" =>"","jelszo"=>"","jelszo2" => "","vnev" => "","knev" => "");
 $siker = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST")

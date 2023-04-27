@@ -1,5 +1,5 @@
 <?php
-include "adatbazisKapcsolat.php";
+include "includes/adatbazisKapcsolat.php";
 $parancs = "DELETE FROM termekek WHERE termekek.nev = '".$_POST["delete"]."'";
 if(isset($_POST["delete"]))
 {

@@ -1,5 +1,5 @@
 <?php
-include "adatbazisKapcsolat.php";
+include "includes/adatbazisKapcsolat.php";
 $errors = array("email" => "","jelszo" => "");
 
 if(isset($_POST["login"]))
