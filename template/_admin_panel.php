@@ -2,7 +2,7 @@
 include "includes/admin_panel_include.php";
 ?>
 
-<div class="container w-50">
+<div class="container-fluid">
   <div class="input-group mb-3 mt-3">
       <input type="text" class="form-control" placeholder="Keresés" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="gomb">Termék keresés</button>
