@@ -25,7 +25,7 @@ function category($kategoriaNev, $kategoriaID)
 {
     $element = "
     <li class=\"nav-item\">
-    <a href=\"product.php?category=$kategoriaID\" class=\"btn btn-light border\">$kategoriaNev</a>
+    <a href=\"products.php?category=$kategoriaID\" class=\"btn btn-light border\">$kategoriaNev</a>
     </li>";
   echo $element;
 }

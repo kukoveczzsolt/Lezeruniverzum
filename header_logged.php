@@ -29,8 +29,8 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="nav-link px-2 text-black">Kezdőlap</a></li>
-          <li><a href="products.php" class="nav-link px-2 text-black">Termékeink</a></li>
-          <li><a href="custom.php" class="nav-link px-2 text-black">Egyedi megrendelés</a></li>
+          <li><a href="products.php?category=1" class="nav-link px-2 text-black">Termékeink</a></li>
+         <!-- <li><a href="custom.php" class="nav-link px-2 text-black">Egyedi megrendelés</a></li> -->
           <li><a href="contact.php" class="nav-link px-2 text-black">Kapcsolat</a></li>
         </ul>
         
