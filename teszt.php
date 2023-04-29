@@ -13,5 +13,6 @@
 </head>
 <body>
     <input type="text">
+    <button type="submit"></button>
 </body>
 </html>
