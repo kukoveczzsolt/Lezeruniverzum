@@ -1,0 +1,56 @@
+<?php 
+session_start();
+require_once('./adatbazisKapcsolat.php');
+require_once('_components.php');
+
+if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'remove')
+    {
+        unset($_SESSION['cart_items'][$_GET['item']]);
+        header('location:cart.php');
+        exit();
+    }
+?>
+
+<div class="row py-2">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h4 class="card-title mb-4">Kosár</h4>
+       
+        <?php
+        if(empty($_SESSION['cart_items']))
+        {
+            echo "A kosár üres";
+            $totalCounter = 0;
+        }
+        
+        if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0)
+        {
+            $totalCounter = 0;
+            $itemCounter = 0;
+            foreach($_SESSION['cart_items'] as $key => $item){
+
+            $total = $item['product_price'] * $item['qty'];
+            $totalCounter+= $total;
+            $itemCounter+=$item['qty'];
+
+            cart_product_card($item['product_name'], $item['product_price'], $item['product_img'], $item['product_id'], $item['qty'], $key, $total);
+
+            }
+        }
+echo 
+        "<div class=\"\">
+            <ul class=\"list-group mb-3\">
+                <li class=\"list-group-item d-flex justify-content-between\">
+                    <span>Termékek összege</span>
+                    <strong>$totalCounter Ft</strong>
+                </li>
+            </ul>
+        </div>
+
+        <div class=\"float-end\">
+        <a href=\"checkout.php\" class=\"btn btn-light border text-danger icon-hover-danger\">Vásárlás</a>
+        </div>
+    </div>
+</div>";
+
+?>

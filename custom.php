@@ -1,0 +1,9 @@
+<?php
+include('header.php');
+?>
+<?php
+include('.\template\_custom.php');
+?>
+<?php
+include('footer.php');
+?>
