@@ -34,7 +34,6 @@
           <li><a href="products.php" class="nav-link px-2 text-black">Termékeink</a></li>
           <li><a href="custom.php" class="nav-link px-2 text-black">Egyedi megrendelés</a></li>
           <li><a href="contact.php" class="nav-link px-2 text-black">Kapcsolat</a></li>
-          <li><a href="about-us.php" class="nav-link px-2 text-black">Rólunk</a></li>
         </ul>
         
         <div class="text-end">
