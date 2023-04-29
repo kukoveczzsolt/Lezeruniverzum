@@ -1,3 +1,47 @@
+<?php 
+session_start();
+require_once('./adatbazisKapcsolat.php');
+require_once('_components.php');
+?>
+
+<div class="row py-2">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h4 class="card-title mb-4">Rendelés</h4>
+       
+        <?php
+        if(empty($_SESSION['cart_items']))
+        {
+            echo "A kosár üres";
+            $totalCounter = 0;
+        }
+        
+        if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0)
+        {
+            $totalCounter = 0;
+            $itemCounter = 0;
+            foreach($_SESSION['cart_items'] as $key => $item){
+
+            $total = $item['product_price'] * $item['qty'];
+            $totalCounter+= $total;
+            $itemCounter+=$item['qty'];
+
+            order_product_card($item['product_name'], $item['product_price'], $item['product_img'], $item['product_id'], $item['qty'], $key, $total);
+
+            }
+        }
+echo 
+        "<div class=\"\">
+            <ul class=\"list-group mb-3\">
+                <li class=\"list-group-item d-flex justify-content-between\">
+                    <span>Termékek összege</span>
+                    <strong>$totalCounter Ft</strong>
+                </li>
+            </ul>
+        </div>
+        </div>";
+?>
+
 <div class="text-center my-5">
     <h2>Számlázási adatok</h2>
 </div>
@@ -106,31 +150,6 @@
                     <textarea class="form-control" id="textAreaExample1" rows="2"></textarea>
                 </div>
             </div>
-            <!-- summary -->
-            <div class="">
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                        <div>
-                            <h6 class="my-0">Termék neve</h6>
-                            <small class="text-body-secondary">Rövid leírás</small>
-                        </div>
-                        <span class="text-body-secondary">10000 Ft</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                        <div>
-                            <h6 class="my-0">Második termék</h6>
-                            <small class="text-body-secondary">Rövid leírás</small>
-                        </div>
-                        <span class="text-body-secondary">1800 Ft</span>
-                    </li>
-
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Termékek összege</span>
-                        <strong>100000 Ft</strong>
-                    </li>
-                </ul>
-            </div>
-            <!-- summary -->
             <div class="float-end">
                 <button class="btn btn-success shadow-0 border">Vásárlás</button>
             </div>

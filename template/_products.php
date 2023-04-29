@@ -1,10 +1,9 @@
 <?php
 require_once('./adatbazisKapcsolat.php');
-require_once('_product_component.php');
-require_once('_category_component.php');
+require_once('_components.php');
 ?>
 
-<div class="text-center my-5">
+<div class="text-center my-2">
   <h2>Termékeink</h2>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
@@ -14,26 +13,26 @@ require_once('_category_component.php');
     </button>
 
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-     <!-- <form action="<?php echo $_SERTVER['PHP_SELF']; ?>" method="post"> -->
-      <form method="post">
-        <ul class="navbar-nav">
-          <?php
-          if (!$result = $conn->query("SELECT * FROM kategoriak")) {
-            die();
-          }
-
+      <ul class="navbar-nav">
+        
+        <?php
+        if (!$result = $conn->query("SELECT * FROM kategoriak")) {
+          die();
+        }
+        if ($result->num_rows) {
           while ($row = mysqli_fetch_assoc($result)) {
             category($row['kategoriaNev'], $row['ID'],);
           }
-          ?>
-        </ul>
-      </form>
+        }
+        ?>
+
+      </ul>
     </div>
   </div>
 </nav>
 
 <!-- Section-->
-<section class="py-5 ">
+<section class="py-2 ">
   <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
 
@@ -41,9 +40,10 @@ require_once('_category_component.php');
       if (!$result = $conn->query("SELECT * FROM termekek")) {
         die();
       }
-
-      while ($row = mysqli_fetch_assoc($result)) {
-        product($row['nev'],  $row['ar'],  $row['kep'],  $row['ID'],);
+      if ($result->num_rows) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          product_card($row['nev'],  $row['ar'],  $row['kep'],  $row['ID'],);
+        }
       }
       ?>
 

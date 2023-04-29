@@ -1,31 +1,71 @@
-<div class="text-center my-5">
-    <h2>Adott termék neve</h2>
-</div>
+<?php
+session_start();
+require_once('./adatbazisKapcsolat.php');
+require_once('_components.php');
+?>
 
-<!-- Product section-->
-<section class="py-2">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="assets\products\1.jpg" alt="..." />
-            </div>
-            <div class="col-md-6">
-                <div class="small mb-1">SKU: BST-498</div>
+<?php
+if (isset($_POST['add_to_cart']) && $_POST['add_to_cart'] == 'add to cart') {
+    $productId = intval($_POST['product_id']);
+    $productQty = intval($_POST['product_qty']);
 
-                <div class="fs-5 mb-5">
-                    <span class="text-decoration-line-through">5000</span> Ft
-                    <span>4500</span> Ft
-                </div>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem
-                    quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius
-                    blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Kosárba
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    if (!$result = $conn->query("SELECT * FROM termekek WHERE ID LIKE $productId")) {
+        die();
+    }
+    if ($result->num_rows) {
+        $row = mysqli_fetch_assoc($result);
+    }
+    $calculateTotalPrice = $productQty * $row['ar'];
+
+    $cartArray = [
+        'product_id' => $productId,
+        'qty' => $productQty,
+        'product_name' => $row['nev'],
+        'product_price' => $row['ar'],
+        'total_price' => $calculateTotalPrice,
+        'product_img' => $row['kep']
+    ];
+
+    if (isset($_SESSION['cart_items']) && !empty($_SESSION['cart_items'])) {
+        $productIDs = [];
+        foreach ($_SESSION['cart_items'] as $cartKey => $cartItem) {
+            $productIDs[] = $cartItem['product_id'];
+            if ($cartItem['product_id'] == $productId) {
+                $_SESSION['cart_items'][$cartKey]['qty'] = $productQty;
+                $_SESSION['cart_items'][$cartKey]['total_price'] = $calculateTotalPrice;
+                break;
+            }
+        }
+
+        if (!in_array($productId, $productIDs)) {
+            $_SESSION['cart_items'][] = $cartArray;
+        }
+
+        $successMsg = true;
+    } else {
+        $_SESSION['cart_items'][] = $cartArray;
+        $successMsg = true;
+    }
+    if (isset($successMsg) && $successMsg == true) {
+        success($row['nev'], $row['kep']);
+    }
+}
+
+if (isset($_GET['product']) && !empty($_GET['product']) && is_numeric($_GET['product'])) {
+    $productId = $_GET['product'];
+
+    if (!$result = $conn->query("SELECT * FROM termekek WHERE ID LIKE $productId")) {
+        die();
+    }
+
+    if ($result->num_rows) {
+        $row = mysqli_fetch_assoc($result);
+        product($row['nev'],  $row['ar'],  $row['kep'],  $row['leiras'], $row['ID']);
+    }
+} 
+else {
+    $error = '404! No record found';
+}
+
+?>
+
