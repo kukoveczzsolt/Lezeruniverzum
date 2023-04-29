@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once('./adatbazisKapcsolat.php');
 require_once('_components.php');
 
