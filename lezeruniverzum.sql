@@ -72,17 +72,6 @@ INSERT INTO `kategoriak` (`kategoriaNev`, `ID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kosar`
---
-
-CREATE TABLE `kosar` (
-  `felhaszID` int(255) NOT NULL,
-  `termekID` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `rendelesek`
 --
 
