@@ -1,5 +1,6 @@
 <?php
 
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,6 @@
     <title>Teszt</title>
 </head>
 <body>
-    
+    <input type="text">
 </body>
 </html>
