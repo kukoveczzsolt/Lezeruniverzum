@@ -13,6 +13,6 @@ Attila módosít
 </head>
 <body>
     <input type="text">
-    <button type="submit"></button>
+    <button type="submit">Küldés</button>
 </body>
 </html>
