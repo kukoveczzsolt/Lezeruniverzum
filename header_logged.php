@@ -43,8 +43,8 @@
               <?php echo $_SESSION["email"]; ?>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Profil</a></li>
-              <li><a class="dropdown-item" href="#">Rendelések</a></li>
+              <li><a class="dropdown-item" href="user.php">Profil</a></li>
+              <li><a class="dropdown-item" href="orders.php">Rendelések</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -65,7 +65,7 @@
   </header>
 
   <!-- Header-->
-  <header class="bg-light py-5">
+  <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-white">
         <h1 class="display-4 fw-bolder">Lézer Univerzum</h1>
