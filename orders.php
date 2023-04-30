@@ -8,10 +8,13 @@ else
 {
     include "header_logged.php";
 }
+
 ?>
+
 <?php
-include('.\template\_user-form.php');
+include "template/_orders.php";
 ?>
+
 <?php
-include('footer.php');
-?>
+include "footer.php";
+?>  
