@@ -1,6 +1,5 @@
 <?php
 include "adatbazisKapcsolat.php";
-
 function kategoria_listazas($dbconn)
 {
     $select_parnacs = "SELECT kategoriaNev FROM kategoriak where kategoriak.ID > 1";
@@ -18,17 +17,26 @@ if(isset($_POST["letrehozas"]))
     $leiras = $_POST["leiras"];
     $kep = $_FILES["kep"]["name"];
     $kategoria_selected = $_POST["kategoria_selected"];
-    $parancs = "INSERT INTO termekek(nev, ar,kategoriaID,leiras,kep) VALUES ('$termek_nev','$termek_ar',(SELECT kategoriak.ID from kategoriak where kategoriak.kategoriaNev = '$kategoria_selected'),'$leiras','$kep')";
-    try{
-        mysqli_query($conn,$parancs);
-    }
-    catch(Exception $ex)
+    $parancs = "INSERT INTO termekek(nev, ar,kategoriaID,leiras,kep) VALUES ('$termek_nev','$termek_ar',(SELECT kategoriak.ID from kategoriak where kategoriak.kategoriaNev = '$kategoria_selected'),'$leiras','assets/products/$kep')";
+    if(empty($termek_nev) || empty($termek_ar) || empty($leiras) || empty($kep))
     {
-        echo $ex->getMessage();
+        header("Location: ../termek_hozzaadasa.php");
     }
-    move_uploaded_file($_FILES["kep"]["tmp_name"],"assets/products/$kep");
-    header("Location: ../termek_hozzaadasa.php");
+    else
+    {
+        try
+        {
+            mysqli_query($conn,$parancs);
+        }
+        catch(Exception $ex)
+        {
+            echo $ex->getMessage();
+        }
+        move_uploaded_file($_FILES["kep"]["tmp_name"],"assets/products/$kep");
+        header("Location: ../termek_hozzaadasa.php");
+    }
 }
+
 
 if(isset($_POST["kategoria_letrehozas"]))
 {
