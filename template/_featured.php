@@ -1,6 +1,7 @@
 <?php
 require_once('./adatbazisKapcsolat.php');
 require_once('_components.php');
+error_reporting(0);
 ?>
 
 

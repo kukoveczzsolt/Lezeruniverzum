@@ -18,11 +18,8 @@ include "_login_include.php";
                 <input type="password" class="form-control" placeholder="Jelszó" id="exampleInputPassword1" name="jelszo">
                 <p><?php if(array_key_exists("jelszo",$errors)) {echo $errors["jelszo"];} ?></p>
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="maradjon">
-                <label class="form-check-label" for="exampleCheck1">Maradjon bejelentkezve</label>
-            </div>
             <button type="submit" class="btn btn-primary" name="login">Belépés</button>
+            <a href="registration.php" class="btn btn-primary">Regisztráció</a>
         </form>
     </div>
 </div>

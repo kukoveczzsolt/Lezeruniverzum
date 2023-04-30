@@ -1,6 +1,7 @@
 <?php 
 require_once('./adatbazisKapcsolat.php');
 require_once('_components.php');
+error_reporting(0);
 
 if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'remove')
     {
@@ -46,10 +47,14 @@ echo
             </ul>
         </div>
 
-        <div class=\"float-end\">
-        <a href=\"checkout.php\" class=\"btn btn-light border text-danger icon-hover-danger\">Vásárlás</a>
-        </div>
+        <div class=\"float-end\">";
+        if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0)
+        {
+        echo "<a href=\"checkout.php\" class=\"btn btn-outline-dark flex-shrink-0\">Tovább</a>";
+        }
+
+echo  "</div>
     </div>
 </div>";
-
+    
 ?>

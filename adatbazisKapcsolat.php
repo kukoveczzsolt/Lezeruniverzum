@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 $host = "localhost";
 $nev = "root";
 $jelszo = "";
@@ -7,9 +7,12 @@ $adatbazis = "lezeruniverzum";
 
 
 // Create connection
+try{
 $conn = new mysqli($host, $nev, $jelszo, $adatbazis);
-if($conn->connect_errno){
-echo $conn->connect_error;
-die();
 }
+catch(Exception $e)
+{
+    echo "Nem sikerült az adatbázishoz kapcsolódni, kérem próbálja újra később!";
+}
+
 ?>

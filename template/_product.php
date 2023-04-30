@@ -1,6 +1,7 @@
 <?php
 require_once('./adatbazisKapcsolat.php');
 require_once('_components.php');
+error_reporting(0);
 ?>
 
 <?php
@@ -46,7 +47,13 @@ if (isset($_POST['add_to_cart']) && $_POST['add_to_cart'] == 'add to cart') {
         $successMsg = true;
     }
     if (isset($successMsg) && $successMsg == true) {
+        echo "<div class=\"row my-5\">
+        <div class=\"col-4\"></div>";
+
         success($row['nev'], $row['kep']);
+
+        echo "<div class=\"my-5\">
+        <div class=\"col-4\"></div>";
     }
 }
 
@@ -61,8 +68,7 @@ if (isset($_GET['product']) && !empty($_GET['product']) && is_numeric($_GET['pro
         $row = mysqli_fetch_assoc($result);
         product($row['nev'],  $row['ar'],  $row['kep'],  $row['leiras'], $row['ID']);
     }
-} 
-else {
+} else {
     $error = '404! No record found';
 }
 

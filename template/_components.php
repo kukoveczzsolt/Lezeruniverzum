@@ -71,7 +71,7 @@ echo $element;
 function success($productName, $productImg)
 {
   $element =
-  "<section class=\"py-2\">
+  "<section class=\"py-2 col-4\">
   <div class=\"container px-4 px-lg-5 my-2\">
      <div class=\"row gx-4 gx-lg-5 align-items-center\">
         <div class=\"row mt-3\">
@@ -89,6 +89,26 @@ function success($productName, $productImg)
   echo $element;
 }
 
+function success_order()
+{
+  $element =
+  "<section class=\"py-2 col-4\">
+  <div class=\"container px-4 px-lg-5 my-2\">
+     <div class=\"row gx-4 gx-lg-5 align-items-center\">
+        <div class=\"row mt-3\">
+           <div class=\"col-md-12\">
+              <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
+                 Sikeres megrendelés. <a href=\"index.php\" class=\"alert-link\">Vissza a főoldalra</a>
+                 <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>";
+
+  echo $element;
+}
 
 function cart_product_card($productName, $productPrice, $productImg, $productId, $productNumber, $key, $total)
 {
@@ -119,7 +139,7 @@ function cart_product_card($productName, $productPrice, $productImg, $productId,
   </div>
   <div class=\"col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2\">
      <div class=\"float-md-end\">
-        <a href=\"cart.php?action=remove&item=$key\" class=\"btn btn-light border text-danger icon-hover-danger\">Törlés</a>
+        <a href=\"cart.php?action=remove&item=$key\" class=\"btn btn-outline-dark text-danger flex-shrink-0\">Törlés</a>
      </div>
      </div>
 </div>";
