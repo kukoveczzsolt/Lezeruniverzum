@@ -4,7 +4,7 @@ include "register.php";
 
   <link rel="stylesheet" href="register.css">
 
-  <div class="text-center my-5">
+  <div class="text-center my-2">
     <h2>Regisztráció</h2>
   </div>
 

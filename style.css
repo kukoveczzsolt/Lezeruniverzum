@@ -1,29 +1,20 @@
-.img-max {
-  max-width: 270px;
-  width: 100%;
-}
-
-.container {
+.primary {
   font-family: "Ranchers", cursive;
+  color: rgb(104, 60, 6);
+}
+.primary-bg {
+  background-color: rgb(184, 168, 149);
 }
 
-p {
+.secondary {
   font-family: "Ranchers", cursive;
+  color: rgb(184, 168, 149);
+}
+.secondary-bg {
+  background-color: rgb(104, 60, 6);
 }
 
-footer {
-  font-family: "Ranchers", cursive;
-}
-
-.row {
-  font-family: "Ranchers", cursive;
-}
-
-.first
-{
-color: rgb(230, 138, 78);
-}
-.first_bg
-{
-  background-color: rgb(230, 138, 78);
+.btn:hover {
+  background-color: rgb(136, 76, 3);
+  color: rgb(136, 119, 97);
 }

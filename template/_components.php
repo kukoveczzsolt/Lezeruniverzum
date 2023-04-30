@@ -3,7 +3,7 @@ function product_card($productName, $productPrice, $productImg, $productId)
 {
     $element = "
     <div class=\"col mb-2\">
-    <div class=\"card h-100\">
+    <div class=\"card h-100 secondary-bg secondary\">
       <!-- Product image-->
       <a href=\"product.php?product=$productId\"><img class=\"card-img-top img-max\" src=\"$productImg\" /></a>
       <!-- Product details-->
@@ -25,7 +25,7 @@ function category($kategoriaNev, $kategoriaID)
 {
     $element = "
     <li class=\"nav-item\">
-    <a href=\"products.php?category=$kategoriaID\" class=\"btn btn-light border\">$kategoriaNev</a>
+    <a href=\"products.php?category=$kategoriaID\" class=\"btn primary flex-shrink-0\">$kategoriaNev</a>
     </li>";
   echo $element;
 }
@@ -53,11 +53,11 @@ function product($productName, $productPrice, $productImg, $productDesc, $produc
                 <div class=\"d-flex\">
                     <form class=\"form-inline\" method=\"POST\">
                         <div class=\"form-group mb-2\">
-                            <input type=\"number\" name=\"product_qty\" id=\"productQty\" class=\"form-control\" placeholder=\"Quantity\" min=\"1\" max=\"1000\" value=\"1\">
+                            <input type=\"number\" name=\"product_qty\" id=\"productQty\" class=\"form-control primary\" placeholder=\"Quantity\" min=\"1\" max=\"1000\" value=\"1\">
                             <input type=\"hidden\" name=\"product_id\" value=\"$productId\">
                         </div>
                         <div class=\"form-group mb-2 ml-2\">
-                            <button type=\"submit\" class=\"btn btn-outline-dark flex-shrink-0\" name=\"add_to_cart\" value=\"add to cart\">Kosárba</button>
+                            <button type=\"submit\" class=\"btn primary flex-shrink-0\" name=\"add_to_cart\" value=\"add to cart\">Kosárba</button>
                         </div>
                     </form>
                 </div>
@@ -139,7 +139,7 @@ function cart_product_card($productName, $productPrice, $productImg, $productId,
   </div>
   <div class=\"col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2\">
      <div class=\"float-md-end\">
-        <a href=\"cart.php?action=remove&item=$key\" class=\"btn btn-outline-dark text-danger flex-shrink-0\">Törlés</a>
+        <a href=\"cart.php?action=remove&item=$key\" class=\"btn primary flex-shrink-0\">Törlés</a>
      </div>
      </div>
 </div>";

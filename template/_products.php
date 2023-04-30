@@ -7,7 +7,7 @@ error_reporting(0);
 <div class="text-center my-2">
   <h2>Termékeink</h2>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Tenth navbar example">
+<nav class="navbar navbar-expand-lg primary-bg primary" aria-label="Tenth navbar example">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

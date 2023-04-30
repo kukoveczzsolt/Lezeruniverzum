@@ -2,7 +2,7 @@
 include "_login_include.php";
 ?>
 
-<div class="text-center my-5">
+<div class="text-center my-2">
     <h2>Belépés</h2>
 </div>
 

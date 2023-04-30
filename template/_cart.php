@@ -38,7 +38,7 @@ if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
         echo
         "<div class=\"\">
             <ul class=\"list-group mb-3\">
-                <li class=\"list-group-item d-flex justify-content-between\">
+                <li class=\"list-group-item d-flex justify-content-between primary primary-bg\">
                     <span>Termékek összege</span>
                     <strong>$totalCounter Ft</strong>
                 </li>
@@ -47,7 +47,7 @@ if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
 
         <div class=\"float-end\">";
         if (isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0) {
-            echo "<a href=\"checkout.php\" class=\"btn btn-outline-dark flex-shrink-0\">Tovább</a>";
+            echo "<a href=\"checkout.php\" class=\"btn primary flex-shrink-0\">Tovább</a>";
         }
 
         echo  "</div>
