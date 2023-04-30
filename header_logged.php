@@ -33,7 +33,7 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="btn btn-outline-dark flex-shrink-0">Kezdőlap</a></li>
-          <li><a href="products.php?category=1" class="btn btn-outline-dark flex-shrink-0">Termékeink</a></li>
+          <li><a href="products.php?category=1" class="btn btn-outline-dark flex-shrink-0 mx-3">Termékeink</a></li>
           <li><a href="contact.php" class="btn btn-outline-dark flex-shrink-0">Kapcsolat</a></li>
         </ul>
 
