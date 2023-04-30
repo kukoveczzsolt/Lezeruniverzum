@@ -1,5 +1,10 @@
 <?php
+if (!isset($_SESSION['email']) || $_SESSION["admin_e"] != 1) 
+{
+  header('location:index.php');
+}
 include "includes/admin_panel_include.php";
+
 ?>
 
 <div class="container-fluid">
