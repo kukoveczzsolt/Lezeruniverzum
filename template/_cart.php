@@ -1,43 +1,41 @@
-<?php 
+<?php
 require_once('./adatbazisKapcsolat.php');
 require_once('_components.php');
 error_reporting(0);
 
-if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'remove')
-    {
-        unset($_SESSION['cart_items'][$_GET['item']]);
-        header('location:cart.php');
-        exit();
-    }
+if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
+    unset($_SESSION['cart_items'][$_GET['item']]);
+    header('location:cart.php');
+    exit();
+}
 ?>
 
 <div class="row py-2">
     <div class="col-4"></div>
     <div class="col-4">
-        <h4 class="card-title mb-4">Kosár</h4>
-       
+        <div class="text-center my-5">
+            <h2>Kosár</h2>
+        </div>
+
         <?php
-        if(empty($_SESSION['cart_items']))
-        {
+        if (empty($_SESSION['cart_items'])) {
             echo "A kosár üres";
             $totalCounter = 0;
         }
-        
-        if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0)
-        {
+
+        if (isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0) {
             $totalCounter = 0;
             $itemCounter = 0;
-            foreach($_SESSION['cart_items'] as $key => $item){
+            foreach ($_SESSION['cart_items'] as $key => $item) {
 
-            $total = $item['product_price'] * $item['qty'];
-            $totalCounter+= $total;
-            $itemCounter+=$item['qty'];
+                $total = $item['product_price'] * $item['qty'];
+                $totalCounter += $total;
+                $itemCounter += $item['qty'];
 
-            cart_product_card($item['product_name'], $item['product_price'], $item['product_img'], $item['product_id'], $item['qty'], $key, $total);
-
+                cart_product_card($item['product_name'], $item['product_price'], $item['product_img'], $item['product_id'], $item['qty'], $key, $total);
             }
         }
-echo 
+        echo
         "<div class=\"\">
             <ul class=\"list-group mb-3\">
                 <li class=\"list-group-item d-flex justify-content-between\">
@@ -48,13 +46,12 @@ echo
         </div>
 
         <div class=\"float-end\">";
-        if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0)
-        {
-        echo "<a href=\"checkout.php\" class=\"btn btn-outline-dark flex-shrink-0\">Tovább</a>";
+        if (isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0) {
+            echo "<a href=\"checkout.php\" class=\"btn btn-outline-dark flex-shrink-0\">Tovább</a>";
         }
 
-echo  "</div>
+        echo  "</div>
     </div>
 </div>";
-    
-?>
+
+        ?>

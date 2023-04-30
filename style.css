@@ -1,0 +1,29 @@
+.img-max {
+  max-width: 270px;
+  width: 100%;
+}
+
+.container {
+  font-family: "Ranchers", cursive;
+}
+
+p {
+  font-family: "Ranchers", cursive;
+}
+
+footer {
+  font-family: "Ranchers", cursive;
+}
+
+.row {
+  font-family: "Ranchers", cursive;
+}
+
+.first
+{
+color: rgb(230, 138, 78);
+}
+.first_bg
+{
+  background-color: rgb(230, 138, 78);
+}

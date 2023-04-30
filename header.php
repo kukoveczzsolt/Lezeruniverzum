@@ -11,7 +11,11 @@
   <!-- Bootstrap 5 CSS styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <!-- Custom CSS styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
 </head>
 
@@ -31,7 +35,6 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="btn btn-outline-dark flex-shrink-0">Kezdőlap</a></li>
           <li><a href="products.php?category=1" class="btn btn-outline-dark flex-shrink-0">Termékeink</a></li>
-          <!-- <li><a href="custom.php" class="nav-link px-2 text-black">Egyedi megrendelés</a></li> -->
           <li><a href="contact.php" class="btn btn-outline-dark flex-shrink-0">Kapcsolat</a></li>
         </ul>
 
@@ -52,11 +55,11 @@
   </header>
 
   <!-- Header-->
-  <header class="bg-dark py-5">
+  <header class="bg-light py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-white">
         <h1 class="display-4 fw-bolder">Lézer Univerzum</h1>
-        <p class="lead fw-normal text-white-50 mb-0">Valami frappáns szlogen.</p>
+        <p class="lead fw-normal text-white-50 mb-0">Környezetbarát ajándékok mindenkinek.</p>
       </div>
     </div>
   </header>

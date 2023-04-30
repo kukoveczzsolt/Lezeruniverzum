@@ -10,7 +10,6 @@ if (!isset($_SESSION['cart_items']) || empty($_SESSION['cart_items'])) {
 
 $email = $_SESSION['email'];
 if (!$result = $conn->query("SELECT * FROM felhasznalok WHERE email LIKE \"$email\"")) {
-
 }
 if ($result->num_rows) {
     $row = mysqli_fetch_assoc($result);
@@ -94,7 +93,7 @@ $siker = "";
             }
 
             if (!empty($_POST["address"])) {
-                if (preg_match("/^[0-9a-zA-ZáéíűúőóüöÁÉÍŰÚŐÓÜÖ]*$/u", $_POST["address"])) {
+                if (preg_match('/[áéíűúőóüöÁÉÍŰÚŐÓÜÖA-Za-z0-9\-\\,.]+/', $_POST["address"])) {
                     $address = $_POST["address"];
                     unset($errors["address"]);
                 } else {
@@ -127,7 +126,7 @@ $siker = "";
             }
 
             if (!empty($_POST["address2"])) {
-                if (preg_match("/^[0-9a-zA-ZáéíűúőóüöÁÉÍŰÚŐÓÜÖ]*$/u", $_POST["address2"])) {
+                if (preg_match('/[áéíűúőóüöÁÉÍŰÚŐÓÜÖA-Za-z0-9\-\\,.]+/', $_POST["address2"])) {
                     $address2 = $_POST["address2"];
                     unset($errors["address2"]);
                 } else {
@@ -146,8 +145,14 @@ $siker = "";
                 $parancs = "INSERT INTO rendelesek (`felhaszID`, `rendlesIdopont`, `osszeg`, `szamlaVaros`, `szamlaIranyitoszam`, `szamlaLakcim`, `szallitVaros`, `szallitIranyitoszam`, `szallitLakcim`, `szallitMod`) VALUES ('$userID','$time','$totalCounter','$city', '$zipcode', '$address', '$city2', '$zipcode2', '$address2', '$shipping')";
                 mysqli_query($conn, $parancs);
 
-/* rendelés részletekbe való feltöltés hiányzik még innen*/
+                $orderId = mysqli_insert_id($conn);
+                foreach ($_SESSION['cart_items'] as $key => $item) {
 
+                    $itemId = $item['product_id'];
+                    $itemQty = $item['qty'];
+                    $parancs = "INSERT INTO rendeles_reszlet (`rendelesID`, `termekID`, `darabszam`) VALUES ('$orderId','$itemId','$itemQty')";
+                    mysqli_query($conn, $parancs);
+                }
                 $successMsg = true;
                 unset($_SESSION['cart_items']);
             } catch (mysqli_sql_exception) {
@@ -155,7 +160,7 @@ $siker = "";
             }
         }
 
-        
+
 
         if (isset($successMsg) && $successMsg == true) {
 
