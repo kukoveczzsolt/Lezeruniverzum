@@ -85,7 +85,9 @@ CREATE TABLE `rendelesek` (
   `szamlaLakcim` varchar(255) DEFAULT NULL,
   `szallitVaros` varchar(255) NOT NULL,
   `szallitIranyitoszam` int(4) NOT NULL,
-  `szallitLakcim` varchar(255) DEFAULT NULL
+  `szallitLakcim` varchar(255) DEFAULT NULL,
+  `szallitMod` int(255) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -100,7 +102,8 @@ CREATE TABLE `rendelesek` (
 
 CREATE TABLE `rendeles_reszlet` (
   `rendelesID` int(11) NOT NULL,
-  `termekID` int(11) NOT NULL
+  `termekID` int(11) NOT NULL,
+  `darabszam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
