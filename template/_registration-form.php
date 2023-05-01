@@ -8,9 +8,9 @@ include "register.php";
     <h2>Regisztráció</h2>
   </div>
 
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+  <div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
       <form action="registration.php" method="post">
       
         <div class="mb-3">
@@ -43,5 +43,5 @@ include "register.php";
         <button type="submit" name="kuldes" class="btn btn-primary">Regisztráció</button>
       </form>
     </div>
-    <div class="col-4"></div>
+    <div class="col-md-2 col-lg-4"></div>
   </div>

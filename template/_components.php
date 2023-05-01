@@ -71,7 +71,7 @@ echo $element;
 function success($productName, $productImg)
 {
   $element =
-  "<section class=\"py-2 col-8\">
+  "<section class=\"py-2 col-md-10 col-lg-8\">
   <div class=\"container px-4 px-lg-5 my-2\">
      <div class=\"row gx-4 gx-lg-5 align-items-center\">
         <div class=\"row mt-3\">
@@ -92,7 +92,7 @@ function success($productName, $productImg)
 function success_order()
 {
   $element =
-  "<section class=\"py-2 col-4\">
+  "<section class=\"py-2 col-md-10 col-lg-8\">
   <div class=\"container px-4 px-lg-5 my-2\">
      <div class=\"row gx-4 gx-lg-5 align-items-center\">
         <div class=\"row mt-3\">

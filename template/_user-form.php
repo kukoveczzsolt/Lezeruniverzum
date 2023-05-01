@@ -55,9 +55,9 @@ if(isset($_POST["kuldes"]))
 <div class="text-center">
     <h2>Felhasználó adatai</h2>
 </div>
-<div class="row my-5">
-    <div class="col-4"></div>
-    <div class="col-4">
+<div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
         <form method="post">
             <div class="mb-3">
                 <label for="email" class="form-label primary">Email cím</label>
@@ -72,15 +72,15 @@ if(isset($_POST["kuldes"]))
                 <input type="text" name="knev" class="form-control primary" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $row["knev"] ?>">
             </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-md-2 col-lg-4"></div>
 </div>
 
 <div class="text-center my-5">
     <h2>Jelszó módosítása</h2>
 </div>
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+<div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
             <div class="mb-3">
                 <label for="jelszo" class="form-label primary">Új jelszó</label>
                 <input type="password" class="form-control primary" name="jelszo" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -90,15 +90,15 @@ if(isset($_POST["kuldes"]))
                 <input type="password" class="form-control primary" name="jelszo2" id="exampleInputPassword1">
             </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-md-2 col-lg-4"></div>
 </div>
 
 <div class="text-center my-5">
     <h2>Adatok mentése</h2>
 </div>
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+<div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label primary">Jelszó</label>
                 <input type="password" name="jelszo_kuldes" class="form-control mb-2 primary" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -106,6 +106,6 @@ if(isset($_POST["kuldes"]))
             </div>
             <button type="submit" class="btn primary-bg primary flex-shrink-0 float-end my-2" name="kuldes">Mentés</button>
     </div>
-    <div class="col-4"></div>
+    <div class="col-md-2 col-lg-4"></div>
     </form>
 </div>

@@ -24,9 +24,9 @@ $siker = "";
 
 ?>
 
-<div class="row py-2">
-    <div class="col-4"></div>
-    <div class="col-4">
+<div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
         <h4 class="card-title mb-4">Rendelés</h4>
 
         <?php
@@ -165,12 +165,12 @@ $siker = "";
         if (isset($successMsg) && $successMsg == true) {
 
             echo "<div class=\"row my-5\">
-                <div class=\"col-4\"></div>";
+                <div class=\"col-md-2 col-lg-4\"></div>";
 
             success_order();
 
             echo "<div class=\"my-5\">
-                <div class=\"col-4\"></div>";
+                <div class=\"col-md-2 col-lg-4\"></div>";
         }
         ?>
 
@@ -183,8 +183,8 @@ $siker = "";
                                                             echo "hidden";
                                                         } ?>>
             <div class="row my-5">
-                <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-md-2 col-lg-4"></div>
+                <div class="col-md-8 col-lg-4">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email cím</label>
                         <input type="email" class="form-control primary" id="email" name="email" value="<?php echo $_SESSION["email"] ?>" readonly>
@@ -220,8 +220,8 @@ $siker = "";
             </div>
 
             <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-md-2 col-lg-4"></div>
+                <div class="col-md-8 col-lg-4">
                     <div class="mb-3">
                         <label for="zipCode2" class="form-label">Irányítószám</label>
                         <input type="text" class="form-control primary" id="zipCode2" name="zipcode2" value="<?php echo (isset($zipcode2) && !empty($zipcode2)) ? $zipcode2 : '' ?>">
@@ -247,8 +247,8 @@ $siker = "";
             </div>
 
             <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-md-2 col-lg-4"></div>
+                <div class="col-md-8 col-lg-4">
                     <form>
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="radio" value="1" id="shipping1" name="shipping" checked />

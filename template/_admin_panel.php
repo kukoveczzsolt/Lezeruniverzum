@@ -9,9 +9,9 @@ include "includes/admin_panel_include.php";
 <div class="text-center py-5">
     <h2>Admin panel</h2>
 </div>
-<div class="row">
-  <div class="col-2"></div>
-  <div class="container-fluid col-6">
+<div class="row px-2">
+  <div class="col-md-4 col-lg-2"></div>
+  <div class="container-fluid col-md-8 col-lg-6">
     <div class="input-group mb-3 mt-3">
       <input type="text" class="form-control mt-3" placeholder="Keresés" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
       <button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="gomb">Termék keresés</button>
@@ -38,7 +38,7 @@ include "includes/admin_panel_include.php";
       </form>
     </div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-md-4 col-lg-2"></div>
   
 
   <script src="termek_kereso.js"></script>

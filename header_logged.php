@@ -63,14 +63,10 @@
     </div>
   </header>
 
-  <!-- Header-->
-  <header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-      <div class="text-center text-white">
-        <h1 class="display-4 fw-bolder">Lézer Univerzum</h1>
-        <p class="lead fw-normal text-white-50 mb-0">Környezetbarát ajándékok mindenkinek.</p>
-      </div>
+  <div class="container px-4 px-lg-5 py-5">
+    <div class="text-center">
+      <img src="assets/images/logo.jpg" alt="logo" class="img-fluid max-width: 100%">
+      <p class="lead fw-normal primary mb-0">Környezetbarát ajándékok mindenkinek.</p>
     </div>
-  </header>
-
-  <main>
+  </div>
+  <main class="primary-bg primary">

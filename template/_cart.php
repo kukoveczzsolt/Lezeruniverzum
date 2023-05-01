@@ -10,9 +10,9 @@ if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
 }
 ?>
 
-<div class="row py-2">
-    <div class="col-4"></div>
-    <div class="col-4">
+<div class="row my-5 px-2">
+    <div class="col-md-2 col-lg-4"></div>
+    <div class="col-md-8 col-lg-4">
         <div class="text-center py-w">
             <h2>Kosár</h2>
         </div>
@@ -52,6 +52,7 @@ if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
 
         echo  "</div>
     </div>
+    <div class=\"col-md-2 col-lg-4\"></div>
 </div>";
 
         ?>
