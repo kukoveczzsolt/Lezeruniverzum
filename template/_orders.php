@@ -8,25 +8,29 @@ function tabla_feltoltes()
                 ON felhasznalok.ID = rendelesek.felhaszID
                 WHERE felhasznalok.email = '".$_SESSION["email"]."' LIMIT $limit";
     $result = mysqli_query($conn,$parancs);
-    $parancs2 = "SELECT termekek.nev,kategoriak.kategoriaNev,termekek.ar,termekek.kep,rendeles_reszlet.darabszam as darab FROM termekek
-    INNER JOIN kategoriak
-    ON
-    kategoriak.ID = termekek.kategoriaID
-    INNER JOIN rendeles_reszlet
-    ON
-    rendeles_reszlet.termekID = termekek.ID
-    INNER JOIN rendelesek
-    ON
-    rendelesek.ID = rendeles_reszlet.rendelesID
-    INNER JOIN felhasznalok
-    ON
-    felhasznalok.ID = rendelesek.felhaszID
-    WHERE felhasznalok.email = '".$_SESSION["email"]."'";
+    $parancs2 ="SELECT rendeles_reszlet.rendelesID as rendelesID, termekek.nev,kategoriak.kategoriaNev,termekek.ar,termekek.kep,rendeles_reszlet.darabszam as darab FROM termekek
+                INNER JOIN kategoriak
+                ON
+                kategoriak.ID = termekek.kategoriaID
+                INNER JOIN rendeles_reszlet
+                ON
+                rendeles_reszlet.termekID = termekek.ID
+                INNER JOIN rendelesek
+                ON
+                rendelesek.ID = rendeles_reszlet.rendelesID
+                INNER JOIN felhasznalok
+                ON
+                felhasznalok.ID = rendelesek.felhaszID
+                WHERE felhasznalok.email = '".$_SESSION["email"]."'
+                ORDER BY rendelesID";
     $result2 = mysqli_query($conn,$parancs2);
-    while($row = mysqli_fetch_array($result))
+    $result3 = mysqli_query($conn,$parancs2);
+    $egysor = mysqli_fetch_assoc($result3);
+    $rendelesID = $egysor["rendelesID"];
+    while($row = mysqli_fetch_assoc($result))
     {
-        echo '<tr>
-                <td><span class="expandChildTable"></span></td>
+        echo '<tr class="expandChildTable">
+                <td><span ></span></td>
                 <td>'.$row["rendlesIdopont"].'</td>
                 <td>'.$row["szallitas_cim"].'</td>
                 <td>'.$row["osszeg"].'</td>
@@ -46,15 +50,24 @@ function tabla_feltoltes()
                                 </tr>
                             </thead>
                             <tbody>';
-        while ($termek = mysqli_fetch_array($result2))
+        while ($termek = mysqli_fetch_assoc($result2))
         {
-            echo'<tr>
-                    <td>'.$termek["nev"].'</td>
-                    <td>'.$termek["kategoriaNev"].'</td>
-                    <td>'.$termek["ar"].'</td>
-                    <td>'.$termek["darab"].'</td>
-                    <td><a href="'.$termek["kep"].'">Kép</a></td>
-                </tr>';
+            if($termek["rendelesID"] == $rendelesID)
+            {
+                echo'<tr>
+                        <td>'.$termek["nev"].'</td>
+                        <td>'.$termek["kategoriaNev"].'</td>
+                        <td>'.$termek["ar"].'</td>
+                        <td>'.$termek["darab"].'</td>
+                        <td><a href="'.$termek["kep"].'">Kép</a></td>
+                    </tr>';
+            }
+            else
+            {
+                $rendelesID = $termek["rendelesID"];
+                break;
+            }
+                           
         }
         echo '</tbody>
         </table>
@@ -66,12 +79,8 @@ function tabla_feltoltes()
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <style>
 .expandChildTable:before {
-    content: "+";
     display: block;
     cursor: pointer;
-}
-.expandChildTable.selected:before {
-    content: "-";
 }
 .childTableRow {
     display: none;
