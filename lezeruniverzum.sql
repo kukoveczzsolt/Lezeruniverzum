@@ -130,39 +130,39 @@ CREATE TABLE `termekek` (
 -- Dumping data for table `termekek`
 --
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
-(1,'Otthon tábla','',4500,'assets/products/20211229_150515.jpg',0,2);
+(1,'Otthon tábla','Tedd hangulatosabbá nappalidat ezzel a teljes mértékben fából készült, pácolt táblával.',4500,'assets/products/20211229_150515.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
-(2,'Otthon tábla','',4500,'assets/products/20211229_150535.jpg',0,2);
+(2,'Otthon tábla','Tedd hangulatosabbá nappalidat ezzel a teljes mértékben fából készült, pácolt táblával.',4500,'assets/products/20211229_150535.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
-(3,'Szív alakú képkeret','',4000,'assets/products/20211229_150556.jpg',1,4);
+(3,'Szív alakú képkeret','Lepd meg Szerelmedet ezzel a teljes mértékben fából készült fényképtartóval.',4000,'assets/products/20211229_150556.jpg',1,4);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`,`kep`,`kiemelt`,`kategoriaID`) VALUES
-(4,'Fa rózsa','',4000,'assets/products/20211229_150614.jpg',1,4);
+(4,'Fa rózsa','Lepd meg Szerelmedet ezzel a teljes mértékben fából készült rózsával.',4000,'assets/products/20211229_150614.jpg',1,4);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(5,'Tolltartó','',5000,'assets/products/20211229_150626.jpg',0,6);
+(5,'Tolltartó','Lepd meg gyermekedet ezzel a teljes mértékben fából készült rózsával.',5000,'assets/products/20211229_150626.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(6,'Tolltartó','',5000,'assets/products/20211229_150703.jpg',0,2);
+(6,'Tolltartó','Lepd meg gyermekedet ezzel a teljes mértékben fából készült rózsával.',5000,'assets/products/20211229_150703.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(7,'Alátét','',750,'assets/products/20211229_151402.jpg',0,2);
+(7,'Alátét','Lepd meg szerettedet ezzel a teljes mértékben fából készült, életfa mintájú poháralátéttel.',750,'assets/products/20211229_151402.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(8,'Kulcstartó','',2000,'assets/products/20211229_151521.jpg',0,4);
+(8,'Kulcstartó','Lepd meg Szerelmedet ezzel a fából készült kulcstartóval.',2000,'assets/products/20211229_151521.jpg',0,4);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(9,'Kulcstartó','',2000,'assets/products/20211229_151547.jpg',0,4);
+(9,'Kulcstartó','Lepd meg Szerelmedet ezzel a fából készült kulcstartóval.',2000,'assets/products/20211229_151547.jpg',0,4);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(10,'Kulcstartó','',2000,'assets/products/20211229_151600.jpg',0,2);
+(10,'Kulcstartó','Lepd meg Szerelmedet ezzel a fából készült kulcstartóval.',2000,'assets/products/20211229_151600.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(11,'Kulcstartó','',2000,'assets/products/20211229_151613.jpg',0,2);
+(11,'Kulcstartó','Lepd meg Szerelmedet ezzel a fából készült kulcstartóval.',2000,'assets/products/20211229_151613.jpg',0,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(12,'Fa formájú képkeret','',20000,'assets/products/20211229_152905.jpg',1,3);
+(12,'Fa formájú képkeret','Lepd meg Szerelmedet ezzel a teljes mértékben fából készült fényképtartóval.',20000,'assets/products/20211229_152905.jpg',1,3);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(13,'Teatartó','',10000,'assets/products/20211229_153038.jpg',0,2);
+(13,'Teatartó','Lepd meg szerettedet ezzel a teljes mértékben fából készült teatartóval.',10000,'assets/products/20211229_153038.jpg',1,2);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(14,'Üdvözlőlap','',10000,'assets/products/20211229_153113.jpg',0,5);
+(14,'Üdvözlőlap','Lepd meg szeretteidet ezzel a teljes mértékben fából készült karácsonyi üdvözlőlappal.',10000,'assets/products/20211229_153113.jpg',0,5);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(15,'Üdvözlőlap','',10000,'assets/products/20211229_153116.jpg',0,5);
+(15,'Üdvözlőlap','Lepd meg szeretteidet ezzel a teljes mértékben fából készült karácsonyi üdvözlőlappal.',10000,'assets/products/20211229_153116.jpg',0,5);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(16,'Adventi kalendárium','',5000,'assets/products/20211229_153316.jpg',0,5);
+(16,'Adventi kalendárium','Lepd meg gyermekedet ezzel a teljes mértékben fából készült adventi kalendáriummal.',5000,'assets/products/20211229_153316.jpg',0,5);
 INSERT INTO `termekek` (`ID`,`nev`,`leiras`,`ar`, `kep`,`kiemelt`,`kategoriaID`) VALUES
-(17,'Lámpás','',5000,'assets/products/20211229_153351.jpg',0,2);
+(17,'Lámpás','Tedd hangulatosabbá hálószobádat ezzel a fából készült lámpással.',5000,'assets/products/20211229_153351.jpg',0,2);
 --
 -- Indexes for dumped tables
 --
@@ -179,12 +179,6 @@ ALTER TABLE `felhasznalok`
 --
 ALTER TABLE `kategoriak`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `kosar`
---
-ALTER TABLE `kosar`
-  ADD KEY `ID` (`felhaszID`) USING BTREE;
 
 --
 -- Indexes for table `rendelesek`
@@ -238,12 +232,6 @@ ALTER TABLE `termekek`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `kosar`
---
-ALTER TABLE `kosar`
-  ADD CONSTRAINT `kosar_ibfk_1` FOREIGN KEY (`felhaszID`) REFERENCES `felhasznalok` (`ID`);
 
 --
 -- Constraints for table `rendelesek`
