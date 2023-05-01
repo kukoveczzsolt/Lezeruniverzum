@@ -65,12 +65,14 @@
     </div>
   </header>
 
-  <!-- Header-->
-
-  <div class="container px-4 px-lg-5 py-5">
+  <div class="py-2">
     <div class="text-center">
-      <img src="assets/images/logo.jpg" alt="logo" class="img-fluid max-width: 100%">
+      <img class="image1" src="assets/images/logo.jpg" alt="background"/>
       <p class="lead fw-normal primary mb-0">Környezetbarát ajándékok mindenkinek.</p>
     </div>
   </div>
+
+  <!-- Header-->
+  
+  
   <main class="primary-bg primary">

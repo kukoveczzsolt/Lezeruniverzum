@@ -13,7 +13,7 @@ if (isset($_GET['action'], $_GET['item']) && $_GET['action'] == 'remove') {
 <div class="row py-2">
     <div class="col-4"></div>
     <div class="col-4">
-        <div class="text-center my-5">
+        <div class="text-center py-w">
             <h2>Kosár</h2>
         </div>
 

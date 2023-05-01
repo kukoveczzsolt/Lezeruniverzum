@@ -4,7 +4,7 @@ require_once('_components.php');
 error_reporting(0);
 ?>
 
-<div class="text-center my-2">
+<div class="text-center py-2">
   <h2>Termékeink</h2>
 </div>
 <nav class="navbar navbar-expand-lg primary-bg primary" aria-label="Tenth navbar example">

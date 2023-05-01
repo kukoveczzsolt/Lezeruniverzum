@@ -5,7 +5,7 @@ error_reporting(0);
 ?>
 
 
-<div class="text-center my-2">
+<div class="text-center py-2">
   <h2>Kiemelt termékeink</h2>
 </div>
 

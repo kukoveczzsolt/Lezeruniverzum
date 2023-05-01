@@ -1,4 +1,4 @@
-<div class="text-center my-2">
+<div class="text-center py-2">
     <h2>Kapcsolat</h2>
 </div>
 <div class="row">

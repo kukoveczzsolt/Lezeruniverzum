@@ -71,7 +71,7 @@ echo $element;
 function success($productName, $productImg)
 {
   $element =
-  "<section class=\"py-2 col-4\">
+  "<section class=\"py-2 col-8\">
   <div class=\"container px-4 px-lg-5 my-2\">
      <div class=\"row gx-4 gx-lg-5 align-items-center\">
         <div class=\"row mt-3\">
@@ -134,7 +134,7 @@ function cart_product_card($productName, $productPrice, $productImg, $productId,
      <div class=\"\">
         <text class=\"h6\">$total Ft</text>
         <br />
-        <small class=\"text-muted text-nowrap\"> $productPrice Ft/db</small>
+        <small class=\"primary\"> $productPrice Ft/db</small>
      </div>
   </div>
   <div class=\"col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2\">
@@ -171,7 +171,7 @@ function order_product_card($productName, $productPrice, $productImg, $productId
      <div class=\"\">
         <text class=\"h6\">$total Ft</text>
         <br />
-        <small class=\"text-muted text-nowrap\"> $productPrice Ft/db</small>
+        <small class=\"primary\"> $productPrice Ft/db</small>
      </div>
   </div>
 </div>";

@@ -18,3 +18,14 @@
   background-color: rgb(136, 76, 3);
   color: rgb(136, 119, 97);
 }
+
+body {
+  background-image: url("assets/images/bg_1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.image1
+{
+  border-radius: 50%;
+}

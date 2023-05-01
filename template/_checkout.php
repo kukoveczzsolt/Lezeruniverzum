@@ -50,7 +50,7 @@ $siker = "";
         echo
         "<div class=\"\">
             <ul class=\"list-group mb-3\">
-                <li class=\"list-group-item d-flex justify-content-between\">
+                <li class=\"list-group-item d-flex justify-content-between primary primary-bg\">
                     <span>Termékek összege</span>
                     <strong>$totalCounter Ft</strong>
                 </li>
@@ -187,29 +187,29 @@ $siker = "";
                 <div class="col-4">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email cím</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION["email"] ?>" readonly>
+                        <input type="email" class="form-control primary" id="email" name="email" value="<?php echo $_SESSION["email"] ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Vezetéknév</label>
-                        <input type="text" class="form-control" id="lastName" name="last_name" value="<?php echo $lastName ?>" readonly>
+                        <input type="text" class="form-control primary" id="lastName" name="last_name" value="<?php echo $lastName ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="firstName" class="form-label">Keresztnév</label>
-                        <input type="text" class="form-control" id="firstName" name="first_name" placeholder="<?php echo $firstName ?>" readonly>
+                        <input type="text" class="form-control primary" id="firstName" name="first_name" value="<?php echo $firstName ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="zipCode" class="form-label">Irányítószám</label>
-                        <input type="text" class="form-control" id="zipCode" name="zipcode" value="<?php echo (isset($zipcode) && !empty($zipcode)) ? $zipcode : '' ?>">
+                        <input type="text" class="form-control primary" id="zipCode" name="zipcode" value="<?php echo (isset($zipcode) && !empty($zipcode)) ? $zipcode : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("zipcode", $errors)) echo $errors["zipcode"]; ?></p>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">Város</label>
-                        <input type="text" class="form-control" id="city" name="city" value="<?php echo (isset($city) && !empty($city)) ? $city : '' ?>">
+                        <input type="text" class="form-control primary" id="city" name="city" value="<?php echo (isset($city) && !empty($city)) ? $city : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("city", $errors)) echo $errors["city"]; ?></p>
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Cím</label>
-                        <input type="text" class="form-control" id="address" name="address" value="<?php echo (isset($address) && !empty($address)) ? $address : '' ?>">
+                        <input type="text" class="form-control primary" id="address" name="address" value="<?php echo (isset($address) && !empty($address)) ? $address : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("address", $errors)) echo $errors["address"]; ?></p>
                     </div>
                 </div>
@@ -224,17 +224,17 @@ $siker = "";
                 <div class="col-4">
                     <div class="mb-3">
                         <label for="zipCode2" class="form-label">Irányítószám</label>
-                        <input type="text" class="form-control" id="zipCode2" name="zipcode2" value="<?php echo (isset($zipcode2) && !empty($zipcode2)) ? $zipcode2 : '' ?>">
+                        <input type="text" class="form-control primary" id="zipCode2" name="zipcode2" value="<?php echo (isset($zipcode2) && !empty($zipcode2)) ? $zipcode2 : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("zipcode2", $errors)) echo $errors["zipcode2"]; ?></p>
                     </div>
                     <div class="mb-3">
                         <label for="city2" class="form-label">Város</label>
-                        <input type="text" class="form-control" id="city2" name="city2" value="<?php echo (isset($city2) && !empty($city2)) ? $city2 : '' ?>">
+                        <input type="text" class="form-control primary" id="city2" name="city2" value="<?php echo (isset($city2) && !empty($city2)) ? $city2 : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("city2", $errors)) echo $errors["city2"]; ?></p>
                     </div>
                     <div class="mb-3">
                         <label for="address2" class="form-label">Cím</label>
-                        <input type="text" class="form-control" id="address2" name="address2" value="<?php echo (isset($address2) && !empty($address2)) ? $address2 : '' ?>">
+                        <input type="text" class="form-control primary" id="address2" name="address2" value="<?php echo (isset($address2) && !empty($address2)) ? $address2 : '' ?>">
                         <p class="text-danger"><?php if (array_key_exists("address2", $errors)) echo $errors["address2"]; ?></p>
                     </div>
                 </div>
@@ -273,7 +273,7 @@ $siker = "";
                 <div class="col-4"></div>
                 <div class="col-4">
                     <div class="float-end">
-                        <button type="submit" class="btn btn-outline-dark flex-shrink-0" name="submit" value="submit">Megrendelés</button>
+                        <button type="submit" class="btn primary-bg primary flex-shrink-0" name="submit" value="submit">Megrendelés</button>
                     </div>
                 </div>
                 <div class="col-4"></div>
