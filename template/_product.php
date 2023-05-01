@@ -48,12 +48,12 @@ if (isset($_POST['add_to_cart']) && $_POST['add_to_cart'] == 'add to cart') {
     }
     if (isset($successMsg) && $successMsg == true) {
         echo "<div class=\"row my-5\">
-        <div class=\"col-2\"></div>";
+        <div class=\"col-md-1 col-lg-2\"></div>";
 
         success($row['nev'], $row['kep']);
 
         echo "<div class=\"my-5\">
-        <div class=\"col-2\"></div>";
+        <div class=\"col-md-1 col-lg-2\"></div>";
     }
 }
 
