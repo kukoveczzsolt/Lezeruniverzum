@@ -9,8 +9,8 @@ include "includes/admin_panel_include.php";
 
 <div class="container-fluid">
   <div class="input-group mb-3 mt-3">
-      <input type="text" class="form-control" placeholder="Keresés" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
-      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="gomb">Termék keresés</button>
+      <input type="text" class="form-control mt-3" placeholder="Keresés" aria-label="Recipient's username" aria-describedby="button-addon2" id="termek_kereso" onkeyup="kereses()">
+      <button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="gomb">Termék keresés</button>
       <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="#nev_kereses">Termék keresés</a></li>
         <li><a class="dropdown-item" href="#kategoria_kereses">Kategória keresés</a></li>

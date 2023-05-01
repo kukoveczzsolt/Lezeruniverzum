@@ -42,8 +42,8 @@
               <?php echo $_SESSION["email"]; ?>
             </button>
             <ul class="dropdown-menu primary-bg">
-              <li><a class="dropdown-item primary" href="#">Profil</a></li>
-              <li><a class="dropdown-item primary" href="#">Rendelések</a></li>
+              <li><a class="dropdown-item primary" href="user.php">Profil</a></li>
+              <li><a class="dropdown-item primary" href="orders.php">Rendelések</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
