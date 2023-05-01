@@ -165,12 +165,12 @@ $siker = "";
         if (isset($successMsg) && $successMsg == true) {
 
             echo "<div class=\"row my-5\">
-                <div class=\"col-md-2 col-lg-4\"></div>";
+                <div class=\"col-md-1 col-lg-2\"></div>";
 
             success_order();
 
             echo "<div class=\"my-5\">
-                <div class=\"col-md-2 col-lg-4\"></div>";
+                <div class=\"col-md-1 col-lg-2\"></div>";
         }
         ?>
 

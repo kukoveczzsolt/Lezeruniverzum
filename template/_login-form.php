@@ -1,6 +1,5 @@
 <?php
-if (isset($_SESSION['email'])) 
-{
+if (isset($_SESSION['email'])) {
     header('location:index.php');
 }
 include "includes/_login_include.php";
@@ -16,15 +15,19 @@ include "includes/_login_include.php";
         <form action="login.php" method="post">
             <div class="mb-3">
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email cím" aria-describedby="emailHelp" name="email">
-                <p><?php if(array_key_exists("email",$errors)) {echo $errors["email"];} ?></p>
+                <p><?php if (array_key_exists("email", $errors)) {
+                        echo $errors["email"];
+                    } ?></p>
             </div>
             <div class="mb-3">
                 <input type="password" class="form-control" placeholder="Jelszó" id="exampleInputPassword1" name="jelszo">
-                <p><?php if(array_key_exists("jelszo",$errors)) {echo $errors["jelszo"];} ?></p>
+                <p><?php if (array_key_exists("jelszo", $errors)) {
+                        echo $errors["jelszo"];
+                    } ?></p>
             </div>
             <div class="float-end pb-2">
-            <button type="submit" class="btn primary flex-shrink-0 my-3 fs-4" name="login">Belépés</button>
-            <a href="registration.php" class="btn primary flex-shrink-0 fs-4">Regisztráció</a>
+                <button type="submit" class="btn primary flex-shrink-0 my-3" name="login">Belépés</button>
+                <a href="registration.php" class="btn primary flex-shrink-0">Regisztráció</a>
             </div>
         </form>
     </div>
