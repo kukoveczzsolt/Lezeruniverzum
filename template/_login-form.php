@@ -1,8 +1,12 @@
 <?php
-include "_login_include.php";
+if (isset($_SESSION['email'])) 
+{
+    header('location:index.php');
+}
+include "includes/_login_include.php";
 ?>
 
-<div class="text-center my-2">
+<div class="text-center my-2 pt-4 pb-3">
     <h2>Belépés</h2>
 </div>
 
@@ -19,8 +23,8 @@ include "_login_include.php";
                 <p><?php if(array_key_exists("jelszo",$errors)) {echo $errors["jelszo"];} ?></p>
             </div>
             <div class="float-end pb-2">
-            <button type="submit" class="btn primary flex-shrink-0" name="login">Belépés</button>
-            <a href="registration.php" class="btn primary flex-shrink-0">Regisztráció</a>
+            <button type="submit" class="btn primary flex-shrink-0 my-3 fs-4" name="login">Belépés</button>
+            <a href="registration.php" class="btn primary flex-shrink-0 fs-4">Regisztráció</a>
             </div>
         </form>
     </div>

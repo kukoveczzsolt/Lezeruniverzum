@@ -1,14 +1,18 @@
 <?php
-include "register.php";
+if (isset($_SESSION['email'])) 
+{
+    header('location:index.php');
+}
+include "includes/register.php";
 ?>
 
   <link rel="stylesheet" href="register.css">
 
-  <div class="text-center my-2">
+  <div class="text-center my-2 pt-4">
     <h2>Regisztráció</h2>
   </div>
 
-  <div class="row py-5 px-2">
+  <div class="row py-4 px-2">
     <div class="col-md-2 col-lg-4"></div>
     <div class="col-md-8 col-lg-4">
       <form action="registration.php" method="post">
