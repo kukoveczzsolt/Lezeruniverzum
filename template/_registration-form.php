@@ -8,7 +8,7 @@ include "register.php";
     <h2>Regisztráció</h2>
   </div>
 
-  <div class="row my-5 px-2">
+  <div class="row py-5 px-2">
     <div class="col-md-2 col-lg-4"></div>
     <div class="col-md-8 col-lg-4">
       <form action="registration.php" method="post">
@@ -39,8 +39,10 @@ include "register.php";
           <input type="password" class="form-control" placeholder="Jelszó megerősítése" name="jelszo2" id="password2">
           <p class="text-danger" ><?php if(array_key_exists("jelszo2",$errors)) echo $errors["jelszo2"]; ?></p>
         </div>
+        <div class="float-end pb-2">
         <p><?php echo $siker ?></p>
-        <button type="submit" name="kuldes" class="btn btn-primary">Regisztráció</button>
+        <button type="submit" name="kuldes" class="btn primary flex-shrink-0">Regisztráció</button>
+        </div>
       </form>
     </div>
     <div class="col-md-2 col-lg-4"></div>

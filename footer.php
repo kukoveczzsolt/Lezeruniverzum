@@ -2,8 +2,8 @@
 
 <footer class="">
   <ul class="nav justify-content-center border-bottom pb-3 secondary-bg secondary">
-    <li class="btn secondary flex-shrink-0 my-2"><a href="assets/documents/ASZF.pdf" class="btn secondary flex-shrink-0 px-2">ÁSZF</a></li>
-    <li class="btn secondary flex-shrink-0 my-2"><a href="https://hu-hu.facebook.com/lezeruniverzum" class="btn secondary flex-shrink-0 px-2">Facebook</a></li>
+    <li class="btn secondary flex-shrink-0 my-2"><a href="assets/documents/ASZF.pdf" class="btn secondary flex-shrink-0 px-2" target="_blank">ÁSZF</a></li>
+    <li class="btn secondary flex-shrink-0 my-2"><a href="https://hu-hu.facebook.com/lezeruniverzum" class="btn secondary flex-shrink-0 px-2" target="_blank">Facebook</a></li>
   </ul>
   <p class="text-center primary-bg primary py-1">&copy; 2023 Lézer Univerzum</p>
 </footer>
