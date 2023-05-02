@@ -5,13 +5,9 @@ if (isset($_SESSION['email']))
 }
 include "includes/register.php";
 ?>
-
-  <link rel="stylesheet" href="register.css">
-
   <div class="text-center my-2 pt-4">
     <h2>Regisztráció</h2>
   </div>
-
   <div class="row py-4 px-2">
     <div class="col-md-2 col-lg-4"></div>
     <div class="col-md-8 col-lg-4">
@@ -21,7 +17,6 @@ include "includes/register.php";
           <!--<label for="email" class="form-label"></label>-->
           <input type="email" class="form-control" placeholder="Email" name="email" id="email" aria-describedby="emailHelp">
           <p class="text-danger"><?php if(array_key_exists("email",$errors)) echo $errors["email"]; ?></p>
-          
         </div>
         <div class="mb-3">
           <label for="forname" class="form-label"></label>
