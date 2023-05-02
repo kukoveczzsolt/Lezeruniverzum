@@ -2,9 +2,9 @@
 include_once "includes/termek_hozzaadasa_include.php";
 ?>
 
-<div class="container bg-light w-25">
+<div class="container primary-bg primary w-25">
 <form method="post" action="includes/termek_hozzaadasa_include.php" enctype="multipart/form-data">
-    <input type="text" class="form-control mt-3" name="termek_nev" placeholder="Termék neve">
+    <input type="text" class="form-control mt-3 my-2 primary" name="termek_nev" placeholder="Termék neve">
     <select class="form-select mt-3" aria-label="Default select example" name="kategoria_selected">
         <optgroup label="Kategóriák">
             <?php kategoria_listazas($conn); ?>
@@ -20,11 +20,11 @@ include_once "includes/termek_hozzaadasa_include.php";
         <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".png,.gif,.jpg" name="kep" maxlength="255">
     </div>
 
-    <button type="submit" class="btn btn-success" name="letrehozas">Létrehozás</button>
+    <button type="submit" class="btn primary flex-shrink-0" name="letrehozas">Létrehozás</button>
 
     <!-- Új termék modal -->
 
-    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#uj_kategoria">Új kategória</button>
+    <button type="button" class="btn primary flex-shrink-0 my-3" data-bs-toggle="modal" data-bs-target="#uj_kategoria">Új kategória</button>
 
     <!-- Modal -->
     <div class="modal fade" id="uj_kategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
