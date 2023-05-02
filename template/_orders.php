@@ -16,7 +16,7 @@ function tabla_feltoltes()
                 <td><span ></span></td>
                 <td>'.$row["rendlesIdopont"].'</td>
                 <td>'.$row["szallitas_cim"].'</td>
-                <td>'.$row["osszeg"].'</td>
+                <td>'.$row["osszeg"].' Ft</td>
                 <td>'.$row["szallitMod"].'</td>
             </tr>
             <tr class="childTableRow">

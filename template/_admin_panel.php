@@ -5,7 +5,7 @@ if (!isset($_SESSION['email']) || $_SESSION["admin_e"] != 1) {
 include "includes/admin_panel_include.php";
 
 ?>
-
+<div class="container-fluid">
 <div class="text-center py-5">
     <h2>Admin panel</h2>
 </div>
@@ -39,7 +39,7 @@ include "includes/admin_panel_include.php";
     </div>
     </div>
     <div class="col-md-4 col-lg-2"></div>
-  
+    </div>
 
   <script src="termek_kereso.js"></script>
 

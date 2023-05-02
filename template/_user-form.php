@@ -51,7 +51,7 @@ if(isset($_POST["kuldes"]))
 }
 
 ?>
-
+<div class="container-fluid">
 <div class="text-center">
     <h2>Felhasználó adatai</h2>
 </div>
@@ -108,4 +108,5 @@ if(isset($_POST["kuldes"]))
     </div>
     <div class="col-md-2 col-lg-4"></div>
     </form>
+</div>
 </div>
