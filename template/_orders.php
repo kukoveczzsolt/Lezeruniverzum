@@ -3,32 +3,15 @@ function tabla_feltoltes()
 {
     include "adatbazisKapcsolat.php";
     $limit = 10;
-    $parancs = "SELECT rendelesek.rendlesIdopont,rendelesek.osszeg,concat(rendelesek.szallitVaros, ' ' ,rendelesek.szallitIranyitoszam, ' ',rendelesek.szallitLakcim) AS szallitas_cim,rendelesek.szallitMod FROM rendelesek 
+    $parancs = "SELECT rendelesek.ID, rendelesek.rendlesIdopont,rendelesek.osszeg,concat(rendelesek.szallitVaros, ' ' ,rendelesek.szallitIranyitoszam, ' ',rendelesek.szallitLakcim) AS szallitas_cim,rendelesek.szallitMod FROM rendelesek 
                 INNER JOIN felhasznalok 
                 ON felhasznalok.ID = rendelesek.felhaszID
-                WHERE felhasznalok.email = '".$_SESSION["email"]."' LIMIT $limit";
+                WHERE felhasznalok.email = '".$_SESSION["email"]."'";
     $result = mysqli_query($conn,$parancs);
-    $parancs2 ="SELECT rendeles_reszlet.rendelesID as rendelesID, termekek.nev,kategoriak.kategoriaNev,termekek.ar,termekek.kep,rendeles_reszlet.darabszam as darab FROM termekek
-                INNER JOIN kategoriak
-                ON
-                kategoriak.ID = termekek.kategoriaID
-                INNER JOIN rendeles_reszlet
-                ON
-                rendeles_reszlet.termekID = termekek.ID
-                INNER JOIN rendelesek
-                ON
-                rendelesek.ID = rendeles_reszlet.rendelesID
-                INNER JOIN felhasznalok
-                ON
-                felhasznalok.ID = rendelesek.felhaszID
-                WHERE felhasznalok.email = '".$_SESSION["email"]."'
-                ORDER BY rendelesID";
-    $result2 = mysqli_query($conn,$parancs2);
-    $result3 = mysqli_query($conn,$parancs2);
-    $egysor = mysqli_fetch_assoc($result3);
-    $rendelesID = $egysor["rendelesID"];
     while($row = mysqli_fetch_assoc($result))
     {
+        $rendelesID = $row["ID"];
+        
         echo '<tr class="expandChildTable">
                 <td><span ></span></td>
                 <td>'.$row["rendlesIdopont"].'</td>
@@ -50,9 +33,26 @@ function tabla_feltoltes()
                                 </tr>
                             </thead>
                             <tbody>';
-        while ($termek = mysqli_fetch_assoc($result2))
+        
+        $parancs2 ="SELECT rendeles_reszlet.rendelesID as rendelesID, termekek.nev,kategoriak.kategoriaNev,termekek.ar,termekek.kep,rendeles_reszlet.darabszam as darab FROM termekek
+        INNER JOIN kategoriak
+        ON
+        kategoriak.ID = termekek.kategoriaID
+        INNER JOIN rendeles_reszlet
+        ON
+        rendeles_reszlet.termekID = termekek.ID
+        INNER JOIN rendelesek
+        ON
+        rendelesek.ID = rendeles_reszlet.rendelesID
+        INNER JOIN felhasznalok
+        ON
+        felhasznalok.ID = rendelesek.felhaszID
+        WHERE rendelesek.ID = ".$rendelesID."
+        ORDER BY rendelesID";
+        $result2;
+        if($result2 = mysqli_query($conn,$parancs2))
         {
-            if($termek["rendelesID"] == $rendelesID)
+            while ($termek = mysqli_fetch_assoc($result2))
             {
                 echo'<tr>
                         <td>'.$termek["nev"].'</td>
@@ -60,15 +60,10 @@ function tabla_feltoltes()
                         <td>'.$termek["ar"].'</td>
                         <td>'.$termek["darab"].'</td>
                         <td><a href="'.$termek["kep"].'">Kép</a></td>
-                    </tr>';
+                    </tr>';                                           
             }
-            else
-            {
-                $rendelesID = $termek["rendelesID"];
-                break;
-            }
-                           
         }
+        
         echo '</tbody>
         </table>
         </td>
