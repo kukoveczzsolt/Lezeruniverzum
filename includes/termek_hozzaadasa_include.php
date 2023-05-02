@@ -9,7 +9,6 @@ function kategoria_listazas($dbconn)
         echo "<option value='".$row["kategoriaNev"]."'>".$row["kategoriaNev"]."</option>";
     }
 }
-
 if(isset($_POST["letrehozas"]))
 {
     $termek_nev = $_POST["termek_nev"];
