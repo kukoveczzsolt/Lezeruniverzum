@@ -1,7 +1,7 @@
 <?php
-include "adatbazisKapcsolat.php";
 function kategoria_listazas($dbconn)
 {
+    include "../adatbazisKapcsolat.php";
     $select_parnacs = "SELECT kategoriaNev FROM kategoriak where kategoriak.ID > 1";
     $result = mysqli_query($dbconn,$select_parnacs);
     while($row = mysqli_fetch_array($result))
@@ -11,6 +11,7 @@ function kategoria_listazas($dbconn)
 }
 if(isset($_POST["letrehozas"]))
 {
+    include "../adatbazisKapcsolat.php";
     $termek_nev = $_POST["termek_nev"];
     $termek_ar = $_POST["termek_ar"];
     $leiras = $_POST["leiras"];
@@ -26,19 +27,20 @@ if(isset($_POST["letrehozas"]))
         try
         {
             mysqli_query($conn,$parancs);
+            move_uploaded_file($_FILES["kep"]["tmp_name"],"../assets/products/$kep");
         }
         catch(Exception $ex)
         {
             echo $ex->getMessage();
         }
-        move_uploaded_file($_FILES["kep"]["tmp_name"],"assets/products/$kep");
-        header("Location: ../termek_hozzaadasa.php");
+        header("Location: ../admin_panel.php");
     }
 }
 
 
 if(isset($_POST["kategoria_letrehozas"]))
 {
+    include "../adatbazisKapcsolat.php";
     $kategoria_nev = $_POST["kategoria_nev"];
     $parancs = "INSERT INTO `kategoriak`(`kategoriaNev`) VALUES ('$kategoria_nev')";
     try

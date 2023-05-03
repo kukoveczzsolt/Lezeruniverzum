@@ -1,4 +1,5 @@
 <?php
+include "adatbazisKapcsolat.php";
 include_once "includes/termek_hozzaadasa_include.php";
 ?>
 
