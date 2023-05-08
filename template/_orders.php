@@ -2,7 +2,6 @@
 function tabla_feltoltes()
 {
     include "adatbazisKapcsolat.php";
-    $limit = 10;
     $parancs = "SELECT rendelesek.ID, rendelesek.rendlesIdopont,rendelesek.osszeg,concat(rendelesek.szallitVaros, ' ' ,rendelesek.szallitIranyitoszam, ' ',rendelesek.szallitLakcim) AS szallitas_cim,rendelesek.szallitMod FROM rendelesek 
                 INNER JOIN felhasznalok 
                 ON felhasznalok.ID = rendelesek.felhaszID
