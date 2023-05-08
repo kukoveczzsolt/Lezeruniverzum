@@ -36,16 +36,16 @@ include_once "includes/termek_hozzaadasa_include.php";
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="includes/termek_hozzaadasa_include.php" method="post">
-                <div class="modal-body">
-                    <input type="text" class="form-control" placeholder="Kategória név" name="kategoria_nev">
-                </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="Kategória név" name="kategoria_nev">
+                    </div>
 
-                <div class="modal-footer">
-                    <form method="post">
-                    <button type="submit" class="btn btn-primary" name="kategoria_letrehozas">Létrehozás</button>
-                    </form>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
-                </div>
+                    <div class="modal-footer">
+                        <form method="post">
+                            <button type="submit" class="btn btn-primary" name="kategoria_letrehozas">Létrehozás</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
+                    </div>
                 </form>
             </div>
         </div>

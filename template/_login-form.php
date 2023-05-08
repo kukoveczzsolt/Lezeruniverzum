@@ -4,7 +4,7 @@ if (isset($_SESSION['email'])) {
 }
 include "includes/_login_include.php";
 ?>
-
+<div class="container-fluid">
 <div class="text-center my-2 pt-4 pb-3">
     <h2>Belépés</h2>
 </div>
@@ -33,3 +33,4 @@ include "includes/_login_include.php";
     </div>
 </div>
 <div class="col-md-2 col-lg-4"></div>
+</div>

@@ -5,6 +5,7 @@ if (isset($_SESSION['email']))
 }
 include "includes/register.php";
 ?>
+<div class="container-fluid">
   <div class="text-center my-2 pt-4">
     <h2>Regisztráció</h2>
   </div>
@@ -45,4 +46,5 @@ include "includes/register.php";
       </form>
     </div>
     <div class="col-md-2 col-lg-4"></div>
+  </div>
   </div>
